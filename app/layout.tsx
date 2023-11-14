@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { openS } from './ui/fonts/fonts'
 import './globals.css'
+import Nav from './ui/components/Nav'
+import Footer from './ui/components/Footer'
 
-const inter = Inter({ subsets: ['latin'] })
+
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +18,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={openS.className + " bg-gray-50"}>
+        <Nav />
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }
