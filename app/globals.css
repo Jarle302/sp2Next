@@ -19,3 +19,8 @@
 body {
   color: rgb(var(--foreground-rgb));
 }
+
+
+.max-w-482px{
+  max-width: 482px;
+}

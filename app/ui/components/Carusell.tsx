@@ -53,10 +53,10 @@ const Carousell = () => {
 
     return (
         <div className="flex">
-            <button className='bg-gray-600 rounded-l-[12px]' onClick={() => { handleClick() }}><MdArrowForwardIos className="rotate-180" />
+            <button className='bg-gray-600 rounded-l-[12px] px-2' onClick={() => { handleClick() }}><MdArrowForwardIos className="rotate-180" />
             </button>
             {slider[count] && <Slide {...slider[count]} />}
-            <button className='bg-gray-600 rounded-r-[12px]' onClick={() => { handleClick(false) }}><MdArrowForwardIos />
+            <button className='bg-gray-600 rounded-r-[12px]  px-2' onClick={() => { handleClick(false) }}><MdArrowForwardIos />
             </button>
         </div>
     )

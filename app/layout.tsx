@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={openS.className + " bg-gray-50"}>
+      <body className={openS.className + " bg-orange-100"}>
         <Nav />
         {children}
         <Footer />
