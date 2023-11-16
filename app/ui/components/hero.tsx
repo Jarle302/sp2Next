@@ -6,18 +6,21 @@ import Image from 'next/image';
 export default function hero() {
     return (
         <section className="flex gap-10 justify-between flex-wrap">
-            <div className='min-w-[300px] flex-1  flex gap-3 flex-col justify-center'>
-                <h1 className={`${playfair.className} font-bold text-gray-600 fs-3 text-4xl border-b-2 border-red-200 rounded-2xl max-w-max`}>Collective chest</h1>
-                <h2 className={`${lato.className} font-bold w-[366px] text-gray-600 text-3xl`}>Shared Passion, Exceptional Finds</h2>
-                <p className='text-gray-600 max-w-482px'>Explore <strong>Collective Chest</strong> for a <em>fun and easy</em> auction experience! Find <strong>unique art</strong>, <em>vintage treasures</em>, and more in our lively online community. Start your treasure hunt with us <strong>today</strong>!
-                </p>
-                <div className='mt-8 flex gap-3'>
-                    <Button>Start bidding</Button>
-                    <Button isSecondary={true}>New Listing</Button>
+            <div className='min-w-[300px] flex-1  flex gap-3 flex-col'>
+                <h1 className={`${playfair.className} font-bold text-gray-600 fs-3 text-9xl border-b-2 border-red-200 rounded-2xl max-w-max`}>Collective chest</h1>
+                <div className='flex justify-between mt-8 items-center'>
+                    <div className='flex flex-col gap-8'>
+                        <h2 className={`${lato.className} self-start font-bold text-gray-600 text-3xl`}>Shared Passion, Exceptional Finds</h2>
+                        <p className='max-w-[400px] leading-relaxed'>Explore <strong>CommunityChest</strong> for a <em>fun and easy</em> auction experience! Find <strong>unique art</strong>, <em>vintage treasures</em>, and more in our lively online community. Start your treasure hunt with us <strong>today</strong>!</p>
+                        <div className='mt-8 flex gap-3'>
+                            <Button>Start bidding</Button>
+                            <Button isSecondary={true}>New Listing</Button>
 
+                        </div>
+                    </div>
+                    <Carousel />
                 </div>
             </div>
-            <Carousel />
-        </section>
+        </section >
     )
 }
