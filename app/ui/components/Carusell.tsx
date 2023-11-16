@@ -1,26 +1,17 @@
 "use client"
 import { useState, useEffect } from 'react';
-import allListings from "../../endpoints/urls"
 import { MdArrowForwardIos } from "react-icons/md";
-import Slide from './Slide';
 
 
 const slideIntervalTime: number = 5000
 
-const Carousell = () => {
-    const [slider, setSlider] = useState([{ title: "Loading...", media: "Loading...", _count: { bids: 0 }, endsAt: "Loading..." }]);
+const Carousell = ({ Component, items }) => {
     const [count, setCount] = useState(0);
 
-    useEffect(() => {
-        fetch("https://api.noroff.dev/api/v1/auction/listings")
-            .then(res => res.json())
-            .then(data => { console.log(data); setSlider(data.filter(listing => listing.media.length > 0)) })
-    }, [])
 
-    console.log(slider)
     function handleClick(decrement: boolean = true) {
         if (!decrement) {
-            if (count === slider.length - 1) {
+            if (count === items.length - 1) {
                 setCount(0)
                 console.log(count)
             } else {
@@ -33,7 +24,7 @@ const Carousell = () => {
 
         else {
             if (count === 0) {
-                setCount(slider.length - 1)
+                setCount(items.length - 1)
                 console.log(count)
 
             } else {
@@ -46,17 +37,18 @@ const Carousell = () => {
     }
 
     useEffect(() => {
-        const interval = setInterval(() => { setCount(prev => (prev + 1) % slider.length) }, slideIntervalTime);
+        const interval = setInterval(() => { setCount(prev => (prev + 1) % items.length) }, slideIntervalTime);
 
         return () => clearInterval(interval)
-    }, [slider, slideIntervalTime])
+    }, [items, slideIntervalTime])
 
     return (
-        <div className="flex">
-            <button className='bg-gray-600 rounded-l-[12px] px-2' onClick={() => { handleClick() }}><MdArrowForwardIos className="rotate-180" />
+        <div className="relative">
+            <button className='absolute top-[42%] right-[90%] p-5 rounded-r-[12px] px-1 py-4 bg-white ' onClick={() => { handleClick() }}><MdArrowForwardIos className="rotate-180" />
             </button>
-            {slider[count] && <Slide {...slider[count]} />}
-            <button className='bg-gray-600 rounded-r-[12px]  px-2' onClick={() => { handleClick(false) }}><MdArrowForwardIos />
+            {items && <Component {...items[count]} />}
+
+            <button className='absolute top-[42%] left-[90%] p-5  rounded-l-[12px] px-1 py-4  bg-white ' onClick={() => { handleClick(false) }}><MdArrowForwardIos />
             </button>
         </div>
     )

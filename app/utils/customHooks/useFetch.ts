@@ -7,10 +7,10 @@ const useFetch = (url, filterFunction) => {
     fetch(url)
       .then(res => res.json())
       .then(data => {
-        console.log(data);
+        console.log(data,"custom hook");
         setData(filterFunction ? data.filter(filterFunction) : data);
       });
-  }, [url, filterFunction]);
+  }, [url]);
 
   return data;
 };

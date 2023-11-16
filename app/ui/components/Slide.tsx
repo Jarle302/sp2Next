@@ -6,11 +6,11 @@ const Slide = ({ children, title, _count, media, endsAt }) => {
     const timeRemaining = getTimeRemaining(endsAt);
 
     return (
-        <div className="flex flex-col max-w-[800px] bg-gray-600">
+        <div className="flex flex-col max-w-[800px]">
 
-            <h3 className='bg-gray-600 text-orange-200 text-2xl p-2 m-auto'>{title}</h3>
+            <h3 className='transform -translate-x-1 translate-y-12 bg-gray-700 text-orange-200 text-2xl p-2 m-auto'>{title}</h3>
             <img className='w-[350px] h-[350px] object-cover rounded-2xl' src={media[0]} alt="Carousel Item" />
-            <div className="bg-gray-600 p-2 text-white">
+            <div className="px-2 transform -translate-x-[1px] -translate-y-[48px] rounded-2xl bg-gray-700 bg-opacity-90">
                 <p className='text-orange-200'>Bids {_count.bids ? _count.bids : 0}</p>
                 <p>
                     {timeRemaining.days >= 0
@@ -28,5 +28,7 @@ const Slide = ({ children, title, _count, media, endsAt }) => {
         </div>
     )
 }
+
+
 
 export default Slide

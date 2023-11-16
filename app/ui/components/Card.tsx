@@ -1,20 +1,23 @@
 "use client"
-import { useState } from 'react';
-import Button from './Button'
 import getTimeRemaining from "../../utils/getTimeRemaining";
-import Image from 'next/image'
 import { lato } from '../fonts/fonts';
+import Carusel from "./Carusell";
+import ImageComponent from "./ImageComponent";
 
 
 const Card = ({ children, title, _count, media, endsAt, description }) => {
-
+    let imageProps = [{ src: media[0] }]
+    if (media.length > 1) {
+        imageProps = media.map((image) => ({ src: image, width: "183px", height: "180px" }))
+    }
+    console.log(imageProps)
     const timeRemaining = getTimeRemaining(endsAt);
     return (
-        <div className=" w-[250px] h-[380px] rounded-2xl bg-gray-400 flex flex-col items-center">
+        <div className=" w-[250px] h-[380px] border border-solid border-gray-600 border-3 rounded-2xl bg-orange-100 flex flex-col items-center shadow-lg">
             <div className='flex flex-col justify-between  w-full h-full rounded-xl  border-2 border-solid border-gray-600 border-t-none'>
                 <div>
-                    <h3 className="w-full bg-gray-700 mt-2.5 rounded-t-xl mb-3.25 self-center text-center text-white">{title}</h3>
-                    {media && <img className='w-[250px] h-[180px] object-cover' src={media[0]} alt="Carousel Item" />}
+                    <h3 className="w-full bg-gray-700 rounded-t-xl mb-3.25 self-center text-center text-white">{title}</h3>
+                    {media && media.length > 1 ? <Carusel Component={ImageComponent} items={imageProps} /> : <img className='w-[250px] h-[180px] object-cover' src={media[0]} alt="Carousel Item" />}
                     <div className='flex flex-col items-center gap-3 '>
                         <div className='flex w-full justify-between border border-solid border-gray-600 bg-gray-600 text-white p-1'>
                             <p className='text-orange-200 '>Bids {_count?.bids ? _count.bids : 0}</p>
@@ -34,8 +37,8 @@ const Card = ({ children, title, _count, media, endsAt, description }) => {
                     </div>
                 </div>
                 <div className="flex w-full">
-                    <input className='py-[4px] w-1/2 rounded-tl-xl rounded-bl-xl border-solid border-2  border-red-200' type="number" name='bidAmount' id='bidAmount' />
-                    <button className="py-[4px] w-1/2 rounded-br-xl rounded-tr-xl bg-red-200" onClick={() => { console.log("hello") }} isSecondary={true}>Bid now</button>
+                    <input className='py-[10px] w-1/2 rounded-tl-xl rounded-bl-xl border-solid border-2  border-red-200' type="number" name='bidAmount' id='bidAmount' />
+                    <button className="py-[10px] w-1/2 rounded-br-xl rounded-tr-xl bg-red-200" onClick={() => { console.log("hello") }} isSecondary={true}>Bid now</button>
                 </div>
             </div>
         </div>
