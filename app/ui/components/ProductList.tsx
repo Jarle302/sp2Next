@@ -8,7 +8,7 @@ const Products = ({ listOf }: ProductsProps) => {
 
     const [products, setProducts] = useState<Listing[]>([])
 
-    type Listing = { media: string[], id: number, title: string, description: string, endsAt: Date, _count: { bids: number } }
+    type Listing = { media: string[], id: number, title: string, description: string, endsAt: string, _count: { bids: number } }
 
     useEffect(() => {
         fetch("https://api.noroff.dev/api/v1/auction/listings")
