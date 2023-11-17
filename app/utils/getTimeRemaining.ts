@@ -1,9 +1,9 @@
-export default function getTimeRemaining(endtime) {
-        const total = Date.parse(endtime) - Date.parse(new Date());
-        const seconds = Math.floor((total / 1000) % 60);
-        const minutes = Math.floor((total / 1000 / 60) % 60);
-        const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
-        const days = Math.floor(total / (1000 * 60 * 60 * 24));
+export default function getTimeRemaining(endtime:string) {
+        const total:number = Date.parse(endtime) - Date.parse(new Date().toISOString());
+        const seconds:number = Math.floor((total / 1000) % 60);
+        const minutes:number = Math.floor((total / 1000 / 60) % 60);
+        const hours:number = Math.floor((total / (1000 * 60 * 60)) % 24);
+        const days:number = Math.floor(total / (1000 * 60 * 60 * 24));
 
 
 
