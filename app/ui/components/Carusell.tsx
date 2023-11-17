@@ -5,7 +5,7 @@ import { MdArrowForwardIos } from "react-icons/md";
 
 const slideIntervalTime: number = 5000
 
-type CarousellProps = { Component: FC, items: any[] }
+type CarousellProps = { Component: FC<any>, items: any[] }
 const Carousell = ({ Component, items }: CarousellProps) => {
     const [count, setCount] = useState(0);
 
