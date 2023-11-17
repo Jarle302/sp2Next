@@ -6,7 +6,7 @@ import useFetch from '@/app/utils/customHooks/useFetch';
 import Slide from './Slide';
 
 
-export default function hero() {
+export default function Hero() {
     const items = useFetch("https://api.noroff.dev/api/v1/auction/listings", (data) => data.media.length > 0)
     return (
         <section className="flex gap-10 justify-between flex-wrap">

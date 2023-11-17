@@ -31,34 +31,6 @@ export default function About() {
                     <h3 className="text-xl">Collection Chest: Where Rarity Meets Responsibility</h3>
                 </section>  </div>
             <div className=" w-2/5 bg-gray-600 text-orange-100">
-                <h2>Contact Collection Chest</h2>
-
-                <p><strong>Address:</strong></p>
-                <p><em>Collection Chest Headquarters</em></p>
-                <p>1234 Treasure Lane</p>
-                <p>Auction City, Discovery 56789</p>
-
-                <p><strong>Phone:</strong></p>
-                <p>1-800-555-CHEST (1-800-555-2437)</p>
-
-                <p><strong>Email:</strong></p>
-                <p><a href="mailto:support@collectionchest.com">support@collectionchest.com</a></p>
-
-                <p><strong>Customer Service Hours:</strong></p>
-                <p>Monday - Friday: 9:00 AM to 6:00 PM</p>
-                <p>Saturday: 10:00 AM to 4:00 PM</p>
-                <p><s>Closed on Sundays and Public Holidays</s></p>
-
-                <p><strong>Social Media:</strong></p>
-                <p>Facebook: <a href="https://www.facebook.com/CollectionChest" target="_blank">@CollectionChest</a></p>
-                <p>Twitter: <a href="https://twitter.com/CollectionChest" target="_blank">@CollectionChest</a></p>
-                <p>Instagram: <a href="https://www.instagram.com/collection_chest" target="_blank">@collection_chest</a></p>
-
-                <p><strong>Press Inquiries:</strong></p>
-                <p><a href="mailto:press@collectionchest.com">press@collectionchest.com</a></p>
-
-                <p><strong>For Partnerships and Business Development:</strong></p>
-                <p><a href="mailto:partnerships@collectionchest.com">partnerships@collectionchest.com</a></p>
 
             </div>
         </main >
