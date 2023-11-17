@@ -1,7 +1,7 @@
 import React from 'react';
 
 type ImageComponentProps = {
-    src: string;
+    src: ?string;
     alt?: string;
     width?: number;
     height?: number;
