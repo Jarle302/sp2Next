@@ -14,11 +14,10 @@ type CardProps = {
 
 const Card = ({ title, _count, media, endsAt, description }: CardProps) => {
     type ImageComponentProps = { src: string, width?: string, height?: string }[]
-    let imageProps
+    let imageProps = null
     if (media.length > 1) {
         imageProps = media.map((image) => ({ src: image, width: "183px", height: "180px" }))
     }
-    console.log(imageProps)
     const timeRemaining = getTimeRemaining(endsAt);
     return (
         <div className=" w-[250px] h-[380px] border border-solid border-gray-600 border-3 rounded-2xl bg-orange-100 flex flex-col items-center shadow-lg">
