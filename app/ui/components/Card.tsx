@@ -8,7 +8,7 @@ type CardProps = {
     title: string;
     _count: { bids: number };
     media: string[];
-    endsAt: Date;
+    endsAt: string;
     description: string;
 };
 
