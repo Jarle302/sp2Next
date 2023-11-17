@@ -14,7 +14,7 @@ type CardProps = {
 
 const Card = ({ title, _count, media, endsAt, description }: CardProps) => {
     type ImageComponentProps = { src: string, width?: string, height?: string }[]
-    let imageProps = [{ src: media[0] }]
+    let imageProps = media && media.length > 0 ? [{ src: media[0] }] : []
     if (media.length > 1) {
         imageProps = media.map((image) => ({ src: image, width: "183px", height: "180px" }))
     }
