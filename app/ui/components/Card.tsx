@@ -7,7 +7,7 @@ import ImageComponent from "./ImageComponent";
 type CardProps = {
     children?: React.ReactNode;
     title: string;
-    _count: number;
+    _count: { bids: number };
     media: string[];
     endsAt: Date;
     description: string;
