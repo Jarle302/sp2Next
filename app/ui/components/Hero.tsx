@@ -7,7 +7,7 @@ import Slide from './Slide';
 
 
 export default function Hero() {
-    const items = useFetch("https://api.noroff.dev/api/v1/auction/listings", (data) => data.media.length > 0)
+    const items = useFetch("https://api.noroff.dev/api/v1/auction/listings", (data: { media: string[] }) => data.media.length > 0)
     return (
         <section className="flex gap-10 justify-between flex-wrap">
             <div className='min-w-[300px] flex-1  flex gap-3 flex-col'>
