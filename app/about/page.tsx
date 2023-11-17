@@ -26,7 +26,7 @@ export default function About() {
 
                     <h2 className="text-2xl">Join & Make a Difference</h2>
 
-                    <p>Seize the opportunity to make meaningful purchases. Every item, every bid counts towards a sustainable world. Don't wait – be part of this journey today.</p>
+                    <p>Seize the opportunity to make meaningful purchases. Every item, every bid counts towards a sustainable world. Don't wait be part of this journey today.</p>
 
                     <h3 className="text-xl">Collection Chest: Where Rarity Meets Responsibility</h3>
                 </section>  </div>

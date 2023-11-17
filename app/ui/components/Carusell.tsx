@@ -40,7 +40,7 @@ const Carousell = ({ Component, items }) => {
         const interval = setInterval(() => { setCount(prev => (prev + 1) % items.length) }, slideIntervalTime);
 
         return () => clearInterval(interval)
-    }, [items, slideIntervalTime])
+    }, [items])
 
     return (
         <div className="relative">
