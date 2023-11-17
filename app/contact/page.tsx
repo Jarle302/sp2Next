@@ -1,3 +1,4 @@
+"use client"
 import Button from "../ui/components/Button";
 
 export default function Contact() {
