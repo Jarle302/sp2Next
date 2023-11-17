@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 import Card from "./Card";
 
-
-const Products = ({ listOf }) => {
+type ProductsProps = { listOf: string }
+const Products = ({ listOf }: ProductsProps) => {
 
     const [products, setProducts] = useState([])
 
