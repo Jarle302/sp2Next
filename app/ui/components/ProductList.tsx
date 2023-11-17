@@ -19,7 +19,7 @@ const Products = ({ listOf }: ProductsProps) => {
     return (<section>
         <h2>{listOf}</h2>
         <div className="flex gap-10 justify-between flex-wrap">
-            {products.map(product => <Card key={product.id} {...product} />)}
+            {products.length >0 && products.map(product => <Card key={product.id} {...product} />)}
         </div>
     </section>
     )
