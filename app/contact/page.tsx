@@ -18,7 +18,7 @@ export default function Contact() {
                         </div>
                         <div className=" flex flex-col">
                             <label htmlFor="message">message</label>
-                            <textarea name="message" id="message" cols="30" rows="5"></textarea>
+                            <textarea name="message" id="message" cols={30} rows={5}></textarea>
                             <Button>Send</Button>
                         </div>
 
