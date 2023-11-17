@@ -1,11 +1,12 @@
 "use client"
-import { useState, useEffect } from 'react';
+import { useState, useEffect, FC } from 'react';
 import { MdArrowForwardIos } from "react-icons/md";
 
 
 const slideIntervalTime: number = 5000
 
-const Carousell = ({ Component, items }) => {
+type CarousellProps = { Component: FC, items: any[] }
+const Carousell = ({ Component, items }: CarousellProps) => {
     const [count, setCount] = useState(0);
 
 

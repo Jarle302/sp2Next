@@ -1,7 +1,17 @@
 import { lato } from '../fonts/fonts';
 import getTimeRemaining from "../../utils/getTimeRemaining";
+import { type } from 'os';
+import React from 'react';
 
-const Slide = ({ children, title, _count, media, endsAt }) => {
+type SlideProps = {
+    children?: React.ReactNode;
+    title: string;
+    _count: number;
+    media: string[];
+    endsAt: Date;
+    description: string;
+};
+const Slide = ({ children, title, _count, media, endsAt }: SlideProps) => {
 
     const timeRemaining = getTimeRemaining(endsAt);
 

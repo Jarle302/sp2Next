@@ -4,8 +4,16 @@ import { lato } from '../fonts/fonts';
 import Carusel from "./Carusell";
 import ImageComponent from "./ImageComponent";
 
+type CardProps = {
+    children?: React.ReactNode;
+    title: string;
+    _count: number;
+    media: string[];
+    endsAt: Date;
+    description: string;
+};
 
-const Card = ({ children, title, _count, media, endsAt, description }) => {
+const Card = ({ children, title, _count, media, endsAt, description }: CardProps) => {
     let imageProps = [{ src: media[0] }]
     if (media.length > 1) {
         imageProps = media.map((image) => ({ src: image, width: "183px", height: "180px" }))
