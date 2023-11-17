@@ -1,3 +1,4 @@
+import exp from 'constants';
 import React, { FC } from 'react';
 
 type ImageComponentProps = {
@@ -25,3 +26,6 @@ const ImageComponent: FC<ImageComponentProps> = ({
         />
     );
 }
+
+
+export default ImageComponent
