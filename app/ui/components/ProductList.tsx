@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Card from "./Card";
 
 
-const Products = ({ children, listOf }) => {
+const Products = ({ listOf }) => {
 
     const [products, setProducts] = useState([])
 
