@@ -6,12 +6,14 @@ import Card from "./Card";
 type ProductsProps = { listOf: string }
 const Products = ({ listOf }: ProductsProps) => {
 
-    const [products, setProducts] = useState([])
+    const [products, setProducts] = useState<Listing[]>([])
+
+    type Listing = { media: string[], id: number, title: string, description: string, endsAt: Date, _count: { bids: number } }
 
     useEffect(() => {
         fetch("https://api.noroff.dev/api/v1/auction/listings")
             .then(res => res.json())
-            .then(data => { console.log(data); setProducts(data.filter(listing => listing.media.length > 0)) })
+            .then((data: Listing[]) => { console.log(data); setProducts(data.filter((listing: Listing) => listing.media.length > 0)) })
     }, [])
 
     return (<section>
