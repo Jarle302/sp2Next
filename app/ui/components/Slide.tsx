@@ -6,7 +6,7 @@ import React from 'react';
 type SlideProps = {
     children?: React.ReactNode;
     title: string;
-    _count: number;
+    _count: { bids: number };
     media: string[];
     endsAt: Date;
     description: string;
