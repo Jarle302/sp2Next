@@ -8,7 +8,7 @@ type SlideProps = {
     title: string;
     _count: { bids: number };
     media: string[];
-    endsAt: Date;
+    endsAt: string;
     description: string;
 };
 const Slide = ({ children, title, _count, media, endsAt }: SlideProps) => {
