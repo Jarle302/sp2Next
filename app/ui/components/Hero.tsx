@@ -22,7 +22,7 @@ export default function Hero() {
 
                         </div>
                     </div>
-                    <Carousel Component={Slide} items={items} />
+                    {items.length > 0 && <Carousel Component={Slide} items={items} />}
                 </div>
             </div>
         </section >
