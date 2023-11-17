@@ -46,7 +46,7 @@ const Card = ({ title, _count, media, endsAt, description }: CardProps) => {
                 </div>
                 <div className="flex w-full">
                     <input className='py-[10px] w-1/2 rounded-tl-xl rounded-bl-xl border-solid border-2  border-red-200' type="number" name='bidAmount' id='bidAmount' />
-                    <button className="py-[10px] w-1/2 rounded-br-xl rounded-tr-xl bg-red-200" onClick={() => { console.log("hello") }} isSecondary={true}>Bid now</button>
+                    <button className="py-[10px] w-1/2 rounded-br-xl rounded-tr-xl bg-red-200" onClick={() => { console.log("hello") }}>Bid now</button>
                 </div>
             </div>
         </div>
