@@ -5,7 +5,6 @@ import Carusel from "./Carusell";
 import ImageComponent from "./ImageComponent";
 
 type CardProps = {
-    children?: React.ReactNode;
     title: string;
     _count: { bids: number };
     media: string[];
@@ -13,7 +12,7 @@ type CardProps = {
     description: string;
 };
 
-const Card = ({ children, title, _count, media, endsAt, description }: CardProps) => {
+const Card = ({ title, _count, media, endsAt, description }: CardProps) => {
     type ImageComponentProps = { src: string, width?: string, height?: string }[]
     let imageProps = [{ src: media[0] }]
     if (media.length > 1) {
