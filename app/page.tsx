@@ -1,4 +1,3 @@
-
 import Hero from './ui/components/Hero'
 import Products from './ui/components/ProductList'
 export default function Home() {
