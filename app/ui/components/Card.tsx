@@ -16,7 +16,7 @@ const Card = ({ children, title, _count, media, endsAt, description }) => {
         <div className=" w-[250px] h-[380px] border border-solid border-gray-600 border-3 rounded-2xl bg-orange-100 flex flex-col items-center shadow-lg">
             <div className='flex flex-col justify-between  w-full h-full rounded-xl  border-2 border-solid border-gray-600 border-t-none'>
                 <div>
-                    <h3 className="w-full bg-gray-700 rounded-t-xl mb-3.25 self-center text-center text-white">{title}</h3>
+                    <h3 className="w-full font-bold bg-gray-700 rounded-t-xl mb-3.25 self-center text-center text-white">{title}</h3>
                     {media && media.length > 1 ? <Carusel Component={ImageComponent} items={imageProps} /> : <img className='w-[250px] h-[180px] object-cover' src={media[0]} alt="Carousel Item" />}
                     <div className='flex flex-col items-center gap-3 '>
                         <div className='flex w-full justify-between border border-solid border-gray-600 bg-gray-600 text-white p-1'>
