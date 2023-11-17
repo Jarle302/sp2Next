@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 const useFetch = (url:string, filterFunction:Function) => {
-  const [data, setData] = useState("loading...");
+  const [data, setData] = useState(["loading..."]);
 
   useEffect(() => {
     fetch(url)
