@@ -11,7 +11,7 @@ export default function Hero() {
     return (
         <section className="flex gap-10 justify-between flex-wrap">
             <div className='min-w-[300px] flex-1  flex gap-3 flex-col'>
-                <h1 className={`${playfair.className} font-bold text-gray-600 fs-3 custom-responsive-fontborder-b-2 border-red-200 rounded-2xl max-w-max`}>Collective chest</h1>
+                <h1 className={`${playfair.className} font-bold text-gray-600 fs-3 custom-responsive-font border-b-2 border-red-200 rounded-2xl max-w-max`}>Collective chest</h1>
                 <div className='flex justify-between mt-8 items-center'>
                     <div className='flex flex-col gap-8'>
                         <h2 className={`${lato.className} self-start font-bold text-gray-600 text-3xl`}>Shared Passion, Exceptional Finds</h2>
