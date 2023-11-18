@@ -21,7 +21,7 @@ const Slide = ({ children, title, _count, media, endsAt }: SlideProps) => {
             <h3 className='transform -translate-x-1 translate-y-12 bg-gray-700 text-orange-200 text-2xl p-2 m-auto'>{title}</h3>
             {media && <img className='w-[350px] h-[350px] object-cover rounded-2xl' src={media[0]} alt="Carousel Item" />}
             <div className="px-2 transform -translate-x-[1px] -translate-y-[48px] rounded-2xl bg-gray-700 bg-opacity-90">
-                <p className='text-orange-200'>Bids {_count.bids ? _count.bids : 0}</p>
+                <p className='text-orange-200'>Bids {_count?.bids ? _count.bids : 0}</p>
                 <p>
                     {timeRemaining.days >= 0
                         ? (
