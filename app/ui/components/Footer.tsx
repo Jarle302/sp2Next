@@ -3,7 +3,7 @@ import Link from "next/link"
 const Footer = () => {
     return (
         <footer>
-            <ul>
+            <ul className="temporary-footer">
                 <li><Link href="/contact">Contact Us</Link></li>
                 <li><Link href="/about">About Us</Link></li>
                 <li><Link href="/terms">Terms and Conditions</Link></li>
