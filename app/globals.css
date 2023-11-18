@@ -27,3 +27,7 @@ body {
 
 .custom-gray{
 background-color: #454e5a;}
+
+.custom-responsive-font{
+  font-size: 8rem;
+  font-size:min(max(19vw,2rem),8rem)}

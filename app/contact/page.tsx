@@ -6,7 +6,7 @@ export default function Contact() {
     return (
         <main className="max-w-[1300px] p-[40px] flex">
             <div className="w-full p-5 text-orange-100 bg-gray-600 flex flex-col gap-8">
-                <h1 className="text-9xl">Contact</h1>
+                <h1 className="custom-responsive-font">Contact</h1>
                 <div className="flex flex-wrap gap-[30px]">
                     <form className="flex flex-col w-[247px] h-[286px] custom-gray p-2">
                         <div className=" flex flex-col">
