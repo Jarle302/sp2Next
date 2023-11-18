@@ -4,8 +4,8 @@ import Button from "../ui/components/Button";
 export default function Contact() {
 
     return (
-        <main className="max-w-[1300px] p-[40px] flex justify-center">
-            <div className="w-full  m-[40px] p-5 text-orange-100 bg-gray-600 flex flex-col gap-8">
+        <main className="max-w-[1300px]  md:p-[40px] flex justify-center">
+            <div className="w-full  mt-[40px] p-5 text-orange-100 bg-gray-600 flex flex-col gap-8">
                 <h1 className="custom-responsive-font">Contact</h1>
                 <div className="flex flex-wrap gap-[30px]">
                     <form className="flex flex-col w-[247px] h-[286px] custom-gray p-2">
