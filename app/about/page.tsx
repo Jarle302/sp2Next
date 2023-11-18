@@ -1,7 +1,7 @@
 export default function About() {
     return (
         <main className="max-w-[1300px] p-[40px] flex">
-            <div className="w-3/5 text-gray-600 flex flex-col gap-8">
+            <div className="w-3/5 text-gray-600 flex flex-col gap-8 m-[40px]">
                 <h1 className="custom-responsive-font">About</h1>
                 <section >
                     <h2 className="text-2xl">Collection Chest: Exclusive Treasures for a Greener Future</h2>
@@ -30,7 +30,7 @@ export default function About() {
 
                     <h3 className="text-xl">Collection Chest: Where Rarity Meets Responsibility</h3>
                 </section>  </div>
-            <div className=" w-2/5 bg-gray-600 text-orange-100">
+            <div className=" w-2/5 bg-gray-600 text-orange-100  m-[40px]">
 
             </div>
         </main >
