@@ -15,7 +15,7 @@ export default function Hero() {
                 <div className='flex justify-between mt-8 items-center flex-wrap'>
                     <div className='flex flex-col gap-8'>
                         <h2 className={`${lato.className} self-start font-bold text-gray-600 text-3xl`}>Shared Passion, Exceptional Finds</h2>
-                        <p className='max-w-[400px] leading-relaxed'>Explore <strong>CommunityChest</strong> for a <em>fun and easy</em> auction experience! Find <strong>unique art</strong>, <em>vintage treasures</em>, and more in our lively online community. Start your treasure hunt with us <strong>today</strong>!</p>
+                        <p className='max-w-[400px] leading-relaxed'>Explore <strong>Collective Chest</strong> for a <em>fun and easy</em> auction experience! Find <strong>unique art</strong>, <em>vintage treasures</em>, and more in our lively online community. Start your treasure hunt with us <strong>today</strong>!</p>
                         <div className='mt-8 flex gap-3'>
                             <Button click={() => { console.log("test") }}>Start bidding</Button>
                             <Button click={() => { console.log("test") }} isSecondary={true}>New Listing</Button>
