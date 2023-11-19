@@ -1,3 +1,4 @@
+"use client"
 type buttongrp = {
     children: React.ReactNode;
     handler: () => void;
