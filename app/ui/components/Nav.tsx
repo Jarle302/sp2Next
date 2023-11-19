@@ -12,7 +12,7 @@ const Nav = () => {
     let hiddenClass = hidden ? "hidden" : ""
     const pathName = usePathname()
     return (
-        <header className=" fixed md:static w-full h-[74px] bg-gray-600 z-20">
+        <header className=" fixed md:static w-full h-[74px] bg-gray-600 z-20 text-orange-100">
             <nav className='flex justify-between items-center px-8 py-2 fixed md:static'>
                 <Link href="/"> <Image className="rounded-xl" src="/eksamenlogo.png" width={60} height={93} alt="Logo" /></Link>
                 <div><input className="rounded-2xl" type="text" name="searchBar" id="searchBar" /> <button></button></div>
