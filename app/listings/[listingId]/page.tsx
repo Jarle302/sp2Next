@@ -24,11 +24,13 @@ const Listing = async ({ params }: paramType) => {
     const { title, _count, media, endsAt, description, id } = product
     return (
         <Suspense fallback={<div>LOADING....</div>}>
-            <div className="mt-[40px]">
-                <h1 className="text-gray-600 text-xl">{title}</h1>
-                <ThumbnailGallery media={media} />
-                <p>{description}</p>
-            </div>
+            <main className="pt-[74px]">
+                <div>
+                    <h1 className="text-gray-600 text-2xl align-center">{title}</h1>
+                    <ThumbnailGallery media={media} />
+                    <p>{description}</p>
+                </div>
+            </main>
         </Suspense>
     )
 }
