@@ -18,9 +18,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={openS.className + " bg-orange-100"}>
+      <body className={openS.className + " bg-orange-100 flex flex-col min-h-screen"}>
         <Nav />
-        {children}
+        <div className="flex-grow">
+          {children}
+        </div>
         <Footer />
       </body>
     </html>

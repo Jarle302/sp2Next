@@ -1,6 +1,5 @@
 import { Suspense } from "react"
-import Carusel from "../../ui/components/Carusell"
-import ImageComponent from "@/app/ui/components/ImageComponent";
+import ThumbnailGallery from "@/app/ui/components/ThumbnailGallery";
 type paramType = {
     params: { listingId: string }, title: string;
     _count: { bids: number };
@@ -25,12 +24,9 @@ const Listing = async ({ params }: paramType) => {
     const { title, _count, media, endsAt, description, id } = product
     return (
         <Suspense fallback={<div>LOADING....</div>}>
-            <div>
-                <h1>{title}</h1>
-                <div>
-                    {media && media.length > 0 && media.map(image => <img src={image} alt="" />)}
-                </div>
-                <div><img src="media[0]" alt="" /></div>
+            <div className="mt-[40px]">
+                <h1 className="text-gray-600 text-xl">{title}</h1>
+                <ThumbnailGallery media={media} />
                 <p>{description}</p>
             </div>
         </Suspense>
