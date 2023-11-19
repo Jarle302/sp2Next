@@ -5,6 +5,8 @@ import Carusel from "./Carusell";
 import ImageComponent from "./ImageComponent";
 import Link from "next/link";
 
+
+
 type CardProps = {
     title: string;
     _count: { bids: number };
@@ -15,7 +17,6 @@ type CardProps = {
 };
 
 const Card = ({ title, _count, media, endsAt, description, id }: CardProps) => {
-    type ImageComponentProps = { src: string, width?: string, height?: string }[]
     let imageProps = media && media.length > 0 ? [{ src: media[0] }] : []
     if (media && media.length > 1) {
         imageProps = media.map((image) => ({ src: image, width: "183px", height: "180px" }))
