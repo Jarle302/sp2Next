@@ -20,21 +20,21 @@ body {
   color: rgb(var(--foreground-rgb));
 }
 
-
-.max-w-482px{
+.max-w-482px {
   max-width: 482px;
 }
 
-.custom-gray{
-background-color: #454e5a;}
+.custom-gray {
+  background-color: #454e5a;
+}
 
-.custom-responsive-font{
+.custom-responsive-font {
   font-size: 8rem;
-  font-size:min(max(19vw,2rem),8rem)}
+  font-size: min(max(19vw, 2rem), 8rem);
+}
 
-
-  .temporary-footer{
-    display: flex;
+.temporary-footer {
+  display: flex;
   gap: 29px;
   height: 200px;
   align-items: center;
@@ -43,4 +43,4 @@ background-color: #454e5a;}
   color: antiquewhite;
   padding: 15px;
   width: 100%;
-  }
+}

@@ -20,6 +20,7 @@ const Nav = () => {
                     <li className={pathName === "/" ? "bg-red-200" : ""}> <Link href="/">Home</Link> </li>
                     <li className={pathName === "/about" ? "bg-red-200" : ""}><Link href="/about">About</Link></li>
                     <li className={pathName === "/contact" ? "bg-red-200" : ""}><Link href="/contact">Contact</Link></li>
+                    <li className={pathName === "/profile/login" ? "bg-red-200" : ""}><Link href="/profile/login">Login</Link></li>
                 </ul>
                 <button onClick={() => {
                     setHidden(prev => !prev)
