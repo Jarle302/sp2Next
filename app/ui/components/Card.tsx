@@ -4,6 +4,7 @@ import { lato } from '../fonts/fonts';
 import Carusel from "./Carusell";
 import ImageComponent from "./ImageComponent";
 import Link from "next/link";
+import Input from "./Input";
 
 
 
@@ -46,12 +47,13 @@ const Card = ({ title, _count, media, endsAt, description, id }: CardProps) => {
                         <p className="pl-1 max-w-[223px] max-h-[43px] self-start overflow-hidden">{description}</p>
                     </div>
                 </div>
-                <div className="flex w-full">
-                    <input className='py-[10px] w-1/2 rounded-tl-xl rounded-bl-xl border-solid border-2  border-red-200' type="number" name='bidAmount' id='bidAmount' />
-                    <button className="py-[10px] w-1/2 rounded-br-xl rounded-tr-xl bg-red-200" onClick={() => { console.log("hello") }}>Bid now</button>
+               <div className="w-full font-bold text-center p-[10px] flex gap-2">
+<button className="w-2/4 border border-2 border-gray-600 block m-auto text-orange-100 bg-gray-600">Bid now</button>
+<Link className="w-2/4 border border-2 border-gray-600 block m-auto" href={`./listings/${id}`}>Read more</Link> 
+  </div>
                 </div>
             </div>
-        </div>
+       
     )
 }
 

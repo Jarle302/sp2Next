@@ -1,5 +1,5 @@
 import Input from "./Input";
-type CreateListFormProps {
+type CreateListFormProps = {
     title: string;
     description?: string;
     tags?: string[];
