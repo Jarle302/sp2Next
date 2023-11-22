@@ -53,7 +53,7 @@ const Listing = async ({ params }: paramType) => {
                                     <p className="font-bold text-green-200 text-2xl max-w-[max-content]">{bids[bids.length - 1].amount}</p>
                                     <p>By: {bids[bids.length - 1].bidderName}</p>
                                 </div>
-                                <ButtonBidGrp >Bid now!</ButtonBidGrp>
+                                <ButtonBidGrp>Bid now!</ButtonBidGrp>
                             </div>
                         </div>
                         <BidHistory bids={bids} />
