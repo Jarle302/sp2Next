@@ -1,3 +1,8 @@
+"use client"
+import { use } from "react";
+import Listing from "./Listing"
+import useLocalStorage from "@/app/utils/customHooks/useLocalStorage"
+
 type CreateListFormProps = {
     title: string;
     description?: string;
@@ -6,11 +11,15 @@ type CreateListFormProps = {
     endsAt: string;
   }
 const ListingPreview = ({ title,description,tags,media,endsAt }: ListingPreviewProps) => {
+const placeholderBids = [0,0,0]
+const placeholdeCount = {bids:0}
+const seller = useLocalStorage("profile")
 
 return(
-    <section>
-        <h2 className="font-bold text-gray-600">Preview</h2>
-        <h3>{title? title}</h3>
-    </section>
+    
+    <Listing id="0002" seller={seller} bids={placeholderBids} _count={placeholdeCount} title={title} description={description} tags={tags} media={media} endsAt={endsAt} />
 )
 }
+
+
+export default ListingPreview
