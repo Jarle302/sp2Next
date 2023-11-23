@@ -4,7 +4,7 @@ type initialState = Record<string, string | number | boolean>;
 
 const useForm = (
   initialState: initialState
-): [{}, (e: any) => void, () => void] => {
+): [{}, (e: any) => void, () => void, (prev: any) => void] => {
   const [formSate, setFormState] = useState({ ...initialState });
 
   const handleChange: (e: any) => void = (e) => {
@@ -17,7 +17,7 @@ const useForm = (
 
   const reset = () => setFormState(initialState);
 
-  return [formSate, handleChange, reset];
+  return [formSate, handleChange, reset, setFormState];
 };
 
 export default useForm;
