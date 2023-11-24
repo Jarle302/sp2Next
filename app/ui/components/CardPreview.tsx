@@ -10,7 +10,7 @@ type props ={ [key:string]:string|string[]|undefined
     endsAt: string;
    }
 
-const CardPreview = ({ title, media = [], endsAt, description }:props) => {
+const CardPreview = ({ title, media = [], endsAt, description="Your description" }:props) => {
     const placeholderCount = {bids:0}
 
 return(
