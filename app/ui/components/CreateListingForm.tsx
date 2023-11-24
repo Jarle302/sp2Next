@@ -15,7 +15,7 @@ type CreateListFormProps = {
   }
 
   
-  const CreateListingForm = ({title,description,tags,media,endsAt}:CreateListFormProps) => {
+  const CreateListingForm = () => {
     const [cardOrDetails,setCardOrDetails] = useState<"card"|"details">("card")
     
     const [values,handleChange,reset,setValues] = useForm({
