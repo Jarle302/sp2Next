@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 
 
-type media = { media: string[] };
+type media = { media: string[]|undefined };
 
 const ThumbnailGallery = ({ media }: media) => {
   const [imageIndex, setImageIndex] = useState(0);
