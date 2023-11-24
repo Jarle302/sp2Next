@@ -6,6 +6,8 @@ import CardPreview from "./CardPreview";
 import useForm from "@/app/utils/customHooks/useForm";
 import fetchFunction from "@/app/utils/fetchFunction";
 import { useState } from "react";
+
+
 type CreateListFormProps = {
     title: string;
     description?: string;
@@ -13,15 +15,13 @@ type CreateListFormProps = {
     media?: string[];
     endsAt: string;
   }
-
-  
-  const CreateListingForm = () => {
-    const [cardOrDetails,setCardOrDetails] = useState<"card"|"details">("card")
+const CreateListingForm = () => {
+  const [cardOrDetails,setCardOrDetails] = useState<"card"|"details">("card")
     
     const [values,handleChange,reset,setValues] = useForm({
       title: "",
       description: "",
-      tags: [],
+      tags:[],
       media: [],
       endsAt: "",
     }) 

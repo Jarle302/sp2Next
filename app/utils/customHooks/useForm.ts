@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-type initialState = Record<string, string | number | boolean>;
+type initialState = Record<string, string | number | boolean | string[]>;
 
 const useForm = (
   initialState: initialState
