@@ -19,7 +19,7 @@ type CreateListFormProps = {
 const CreateListingForm = () => {
   const [cardOrDetails,setCardOrDetails] = useState<"card"|"details">("card")
     
-    const [values,handleChange,reset,setValues] = useForm({
+    const [values,handleChange,reset,setValues] = useForm<CreateListFormProps>({
       title: "",
       description: "",
       tags:[],
@@ -27,7 +27,7 @@ const CreateListingForm = () => {
       endsAt: "",
     }) 
     
-    function pushToArray(event:React.ChangeEvent<HTMLInputElement>){
+    function pushToArray(event:React.MouseEvent<HTMLButtonElement, MouseEvent>){
       event.preventDefault()
       event.stopPropagation();
       const input = event.currentTarget.previousSibling?.lastChild as HTMLInputElement;

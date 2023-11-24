@@ -2,10 +2,10 @@ import { useState } from "react";
 
 type initialState = Record<string, string | number | boolean | string[]>;
 
-const useForm = (
-  initialState: initialState
-): [{}, (e: any) => void, () => void, (prev: any) => void] => {
-  const [formSate, setFormState] = useState({ ...initialState });
+const useForm = <T>(
+  initialState: T
+): [T, (e: any) => void, () => void, (prev: any) => void] => {
+  const [formSate, setFormState] = useState<T>({ ...initialState });
 
   const handleChange: (e: any) => void = (e) => {
     const { name, type, value, checked } = e.target;
