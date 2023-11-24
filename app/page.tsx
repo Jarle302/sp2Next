@@ -7,7 +7,6 @@ export default function Home() {
   return (
     <main className="flex min-h-screen text-gray-600 flex-col items-center justify-between p-24">
       <Hero />
-      <CreateListingForm />
       <Products listOf={"Listings"} />
     </main>
   )

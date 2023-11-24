@@ -11,7 +11,7 @@ type CreateListFormProps = {
     endsAt: string;
   }
 const ListingPreview = ({ title,description,tags,media,endsAt }: ListingPreviewProps) => {
-const placeholderBids = [0,0,0]
+const placeholderBids = [2,4,5]
 const placeholdeCount = {bids:0}
 const seller = useLocalStorage("profile")
 

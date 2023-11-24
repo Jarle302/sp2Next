@@ -4,6 +4,7 @@ import Button from './Button';
 import Carousel from "./Carusell";
 import useFetch from '@/app/utils/customHooks/useFetch';
 import Slide from './Slide';
+import Link from 'next/link';
 
 
 export default function Hero() {
@@ -18,7 +19,7 @@ export default function Hero() {
                         <p className='max-w-[400px] leading-relaxed'>Explore <strong>Collective Chest</strong> for a <em>fun and easy</em> auction experience! Find <strong>unique art</strong>, <em>vintage treasures</em>, and more in our lively online community. Start your treasure hunt with us <strong>today</strong>!</p>
                         <div className='mt-8 flex gap-3'>
                             <Button click={() => { console.log("test") }}>Start bidding</Button>
-                            <Button click={() => { console.log("test") }} isSecondary={true}>New Listing</Button>
+                            <Link className='border border-red-200 drop-shadow-md rounded-[9px] p-[10px] font-semibold text-gray-600 box-border' href="/listings/create">Add listing</Link>
 
                         </div>
                     </div>
