@@ -32,8 +32,15 @@ const CreateListingForm = () => {
       event.stopPropagation();
       const input = event.currentTarget.previousSibling?.lastChild as HTMLInputElement;
       let {name,value} = input
-      console.log(input,event.currentTarget.previousSibling,event.currentTarget)
-    setValues((prev:CreateListFormProps) =>{return({...prev,[name]: Array.isArray(prev[name])?[...prev[name],value]:[value]})})
+    setValues((prev:CreateListFormProps) =>{
+      const isThisAnArray =prev[name]
+      let newElement
+      if(Array.isArray(isThisAnArray)){
+        newElement = [...isThisAnArray,value]
+      }
+      else newElement = [value]
+      return(
+      {...prev,[name]: newElement})})
     input.value = ""
     }
 console.log(values)
