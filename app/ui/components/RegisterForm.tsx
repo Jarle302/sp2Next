@@ -11,7 +11,7 @@ const  RegisterForm = () => {
   password: "",
   avatar: "",})
 
- async function handleSubmit(e){
+ async function handleSubmit(e:React.MouseEvent<HTMLButtonElement, MouseEvent>){
   e.preventDefault(); 
   const item = await fetchFunction("https://api.noroff.dev/api/v1/auction/auth/register","POST",values)
   reset()  

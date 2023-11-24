@@ -10,7 +10,7 @@ import login from "@/app/utils/api/login";
 
 const LoginForm = () => {
   
-  async function handleSubmit(e){
+  async function handleSubmit(e:React.MouseEvent<HTMLButtonElement, MouseEvent>){
     e.preventDefault(); login(values)
     reset()  
   }
