@@ -4,7 +4,6 @@ const AllListingsPage = () => {
     return(
         <div>
             <h1>All Listings</h1>
-            <Listing  />
         </div>
     )
 }
