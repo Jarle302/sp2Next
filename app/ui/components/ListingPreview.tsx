@@ -10,7 +10,7 @@ type CreateListFormProps = {
     media?: string[];
     endsAt: string;
   }
-const ListingPreview = ({ title,description,tags,media,endsAt }: ListingPreviewProps) => {
+const ListingPreview = ({ title,description,tags,media,endsAt }: CreateListFormProps) => {
 const placeholderBids = [2,4,5]
 const placeholdeCount = {bids:0}
 const seller = useLocalStorage("profile")
