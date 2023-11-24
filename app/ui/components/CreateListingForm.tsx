@@ -9,6 +9,7 @@ import { useState } from "react";
 
 
 type CreateListFormProps = {
+  [key:string]:string|string[]|undefined
     title: string;
     description?: string;
     tags?: string[];
@@ -32,7 +33,7 @@ const CreateListingForm = () => {
       const input = event.currentTarget.previousSibling?.lastChild as HTMLInputElement;
       let {name,value} = input
       console.log(input,event.currentTarget.previousSibling,event.currentTarget)
-    setValues((prev) =>{return({...prev,[name]: Array.isArray(prev[name])?[...prev[name],value]:[value]})})
+    setValues((prev:CreateListFormProps) =>{return({...prev,[name]: Array.isArray(prev[name])?[...prev[name],value]:[value]})})
     input.value = ""
     }
 console.log(values)
