@@ -1,4 +1,6 @@
-type InputProps = {label: string, type: string, id: string, name: string,placeholder?: string,value?:any,handleChange?:(e)=>void}
+import { ChangeEvent } from "react"
+
+type InputProps = {label: string, type: string, id: string, name: string,placeholder?: string,value?:any,handleChange?:(e:ChangeEvent)=>void}
 
 const Input = ({ label, type, id, name,placeholder,value,handleChange}:InputProps) => {
     return (
