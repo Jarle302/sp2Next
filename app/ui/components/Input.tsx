@@ -6,7 +6,7 @@ const Input = ({ label, type, id, name,placeholder,value,handleChange}:InputProp
     return (
         <div className="flex flex-col my-3">
             <label className="font-bold text-2xl mb-3" htmlFor={id}>{label}</label>
-            <input onChange={handleChange} className="bg-transparent border-b-solid border-b border-b-gray-600 " type={type} id={id} name={name} placeholder={placeholder} value={value} />
+            {type === "textarea"?<textarea onChange={handleChange} className="bg-transparent border-b-solid border-b border-b-gray-600 " type={type} id={id} name={name} placeholder={placeholder} value={value} /> : <input onChange={handleChange} className="bg-transparent border-b-solid border-b border-b-gray-600 " type={type} id={id} name={name} placeholder={placeholder} value={value} /> }
         </div>
     )
 }

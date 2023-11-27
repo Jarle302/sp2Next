@@ -22,9 +22,9 @@ type listingsObject = {
 
 const ProfileListings = ({listings}:listingsObject) => {
     return (
-       <section className="lg:border lg:border-3 lg:rounded-2xl min-h-[50vh] bg-gray-600 lg:bg-orange-100 lg:text-gray-600 py-[300px] lg:py-[0px] text-orange-100">
-        <h2 className="text-4xl text-center" >Listings</h2>
-        <div className="overflow-y-auto h-[600px]">
+       <section className=" lg:h-[100%] bg-gray-600 lg:bg-orange-100 lg:text-gray-600 py-[300px] lg:py-[0px] text-orange-100">
+        <h2 className="text-4xl text-center my-[22px]" >Listings</h2>
+        <div className="lg:h-[100%] lg:border lg:border-gray-600 lg:border-4 lg:rounded-2xl overflow-y-auto h-[600px]">
           { listings?.length >1? listings.map(listing => <ProfileSingleListing key={listing.id} {...listing} />): <p>No listings</p>}
         </div>
        </section>
