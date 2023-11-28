@@ -4,7 +4,8 @@ type FetchOptions = {
   body?: string;
 };
 const fetchFunction = async (url: string, method: string, body?: {}) => {
-  const token = JSON.parse(localStorage.getItem("token") || "");
+  const tempToken = localStorage.getItem("token");
+  const token = tempToken ? JSON.parse(tempToken) : null;
 
   let options: FetchOptions = {
     method,
