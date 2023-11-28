@@ -11,7 +11,7 @@ import Descriptify from "@/app/utils/Descriptify";
 type CreateListFormProps = {
   [key:string]:string|string[]|undefined
     title: string;
-    description?: string;
+    description: string;
     tags?: string[];
     media?: string[];
     endsAt: string;

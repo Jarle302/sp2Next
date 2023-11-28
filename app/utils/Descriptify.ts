@@ -4,8 +4,8 @@ const Descriptify = async ({
   title,
   description,
 }: {
-  title: string;
-  description: string;
+  title: string | undefined;
+  description: string | undefined;
 }) => {
   const data = await fetchFunction(
     process.env.NEXT_PUBLIC_DESCRIPTIFY,
