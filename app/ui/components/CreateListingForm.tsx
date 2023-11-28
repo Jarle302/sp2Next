@@ -52,7 +52,7 @@ console.log(values)
 <Input  handleChange={handleChange} type="textarea" name="description" label="description" id="description" value={values.description} placeholder="description"  />
 <button className="py-[10px] bg-red-200 mt-[20px]" onClick={async(e)=>{e.preventDefault();
   const data = await Descriptify(values)
-  setValues((prev)=>({...prev,description:data.message}))
+  setValues((prev:CreateListFormProps)=>({...prev,description:data.message}))
 }}>Get help from AI!</button>
 <Input  handleChange={handleChange} type="date" name="endsAt" label="endsAt" id="endsAt" value={values.endsAt} placeholder=""  />
 <div className="flex flex-col">
