@@ -1,3 +1,4 @@
+"use client"
 import CreateListingForm from './ui/components/CreateListingForm'
 import Hero from './ui/components/Hero'
 import Products from './ui/components/ProductList'
