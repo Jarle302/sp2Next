@@ -7,12 +7,12 @@ import { useState,useEffect } from "react"
 import useLocalStorage from '@/app/utils/customHooks/useLocalStorage';
 
 const Nav = () => {
-const profile =  useLocalStorage("profile")||""    
+const profile:{name:string,avatar:string,email:string} =  useLocalStorage("profile")||{name:"",avatar:"",email:""}    
    
     const [hidden, setHidden] = useState(true)
     let hiddenClass = hidden ? "hidden" : ""
     const pathName = usePathname()
-    const [isLoggedIn, setIsLoggedIn] = useState(!!profile)
+    const [isLoggedIn, setIsLoggedIn] = useState(!!profile.name)
 
     return (
         <header className=" fixed md:static w-full h-[74px] bg-gray-600 z-20 text-orange-100">
