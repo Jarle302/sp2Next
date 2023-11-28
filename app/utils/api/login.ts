@@ -8,8 +8,10 @@ const login = async (values: {}) => {
   );
   console.log("item", item);
   const { accessToken, ...rest } = item;
-  localStorage.setItem("token", JSON.stringify(accessToken));
-  localStorage.setItem("profile", JSON.stringify({ ...rest }));
+  if (accessToken) {
+    localStorage.setItem("token", JSON.stringify(accessToken));
+    localStorage.setItem("profile", JSON.stringify({ ...rest }));
+  }
 };
 
 export default login;
