@@ -2,12 +2,14 @@ type FetchOptions = {
   method: string;
   headers: any;
   body?: string;
+  cache?: string;
 };
 const fetchFunction = async (url: string, method: string, body?: {}) => {
   const tempToken = localStorage.getItem("token");
   const token = tempToken ? JSON.parse(tempToken) : null;
 
   let options: FetchOptions = {
+    cache: "no-store",
     method,
     headers: {
       "Content-Type": "application/json",

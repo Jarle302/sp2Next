@@ -16,7 +16,7 @@ const ThumbnailGallery = ({ media }: media) => {
           <img className="w-[60px] min-w-[60px] h-[60px] object-cover" onMouseOver={() => (setImageIndex(index))} onClick={() => (setImageIndex(index))} key={index} src={image} />
         ))}
       </div>
-      {media &&<div><img className="max-w-[300px] md:max-w-[50vw] md:max-h-[74vh]" src={ media[imageIndex]} alt="" /></div>}
+      {media &&<div><img className="max-w-[300px] md:max-w-[500px] md:max-h-[500px]" src={ media[imageIndex]} alt="" /></div>}
     </div>
   );
 }
