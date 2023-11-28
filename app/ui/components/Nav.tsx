@@ -7,7 +7,7 @@ import { useState,useEffect } from "react"
 import useLocalStorage from '@/app/utils/customHooks/useLocalStorage';
 
 const Nav = () => {
-const profile =  useLocalStorage("profile")    
+const profile =  useLocalStorage("profile")||""    
    
     const [hidden, setHidden] = useState(true)
     let hiddenClass = hidden ? "hidden" : ""
