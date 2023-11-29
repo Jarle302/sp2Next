@@ -8,10 +8,12 @@ import useLocalStorage from '@/app/utils/customHooks/useLocalStorage';
 
 const Nav = () => {
 const profile:{name:string,avatar:string,email:string} =  useLocalStorage("profile")||{name:"",avatar:"",email:""}    
+
+
+const pathName = usePathname()
    
     const [hidden, setHidden] = useState(true)
     let hiddenClass = hidden ? "hidden" : ""
-    const pathName = usePathname()
     const [isLoggedIn, setIsLoggedIn] = useState(!!profile.name)
 
     return (
