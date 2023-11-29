@@ -30,7 +30,7 @@ type ProductProps = {
 };
 const ListingId = async ({ params }: paramType) => {
 
-    const response = await fetch(`https://api.noroff.dev/api/v1/auction/listings/${params.listingId}?_bids=true&_seller=true`)
+    const response = await fetch(`https://api.noroff.dev/api/v1/auction/listings/${params.listingId}?_bids=true&_seller=true`,{cache: "no-store"})
     const product: ProductProps = await response.json()
     const { title, _count, media, endsAt, description, id, bids, seller } = product
     console.log(product)
