@@ -16,27 +16,7 @@ const SideNav = () => {
           {" "}
           <Link href="/">Home</Link>{" "}
         </li>
-        <li>
-          <Link
-            className={
-              pathName === "/profile/auth/login"
-                ? "underline decoration-8 decoration-red-200	  w-[200px]  font-bold text-xl"
-                : " w-[200px]  font-bold text-xl"
-            }
-            href="/profile/auth/login">
-            Login
-          </Link>
-          /
-          <Link
-            className={
-              pathName === "/profile/auth/register"
-                ? "underline decoration-8 decoration-red-200	  w-[200px]  font-bold text-xl"
-                : " w-[200px]  font-bold text-xl"
-            }
-            href="/profile/auth/register">
-            Register
-          </Link>
-        </li>
+       
         <li>
           <Link
             className={

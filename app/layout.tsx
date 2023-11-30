@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { openS } from "./ui/fonts/fonts";
 import "./globals.css";
 import Nav from "./ui/components/Nav";
-import Footer from "./ui/components/Footer";
 import SideNav from "./ui/components/SideNav";
+import ContextContainer from "./ui/components/ContextContainer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,11 +22,17 @@ export default function RootLayout({
           openS.className +
           " bg-orange-100 flex flex-col min-h-screen text-gray-600 bg-orange-100"
         }>
-        <Nav />
-        <div className="grid gridCustom h-[100%]">
-          <SideNav />
-          <div className="flex-grow h-[100vh] overflow-y-auto">{children}</div>
-        </div>
+        {" "}
+        <ContextContainer>
+          {" "}
+          <Nav />
+          <div className="grid gridCustom h-[100%]">
+            <SideNav />
+            <div className="flex-grow h-[100vh] overflow-y-auto">
+              {children}
+            </div>
+          </div>
+        </ContextContainer>
       </body>
     </html>
   );
