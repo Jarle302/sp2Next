@@ -3,29 +3,29 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useContext } from "react";
 import { UserAccount } from "./ContextContainer";
-import { GiChest } from "react-icons/gi";
+import { GiChest, GiHamburgerMenu } from "react-icons/gi";
+import { HiMiniCurrencyDollar } from "react-icons/hi2";
+
+import { NavContext } from "./NavProvider";
 
 const Nav = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const { userAccount, setUserAccount } = useContext(UserAccount);
+  const { navState, setNavState } = useContext(NavContext);
 
   useEffect(() => {
     userAccount.name ? setIsLoggedIn(true) : setIsLoggedIn(false);
   }, [userAccount]);
   return (
     <header className=" fixed md:static w-full h-[74px] bg-gray-600 z-20 text-orange-100">
-      <nav className="flex justify-between items-center px-8 py-2 fixed md:static">
+      <nav className="flex justify-between items-center px-8 py-2  md:static">
         <Link href="/">
           {" "}
-          <Image
-            className="rounded-xl"
-            src="/eksamenlogo.png"
-            width={60}
-            height={93}
-            alt="Logo"
-          />
+          <span className="text-orange-100 text-[4rem]">
+            <GiChest />
+          </span>
         </Link>
-        <ul>
+        <ul className="flex gap-[20px]">
           {" "}
           {!isLoggedIn ? (
             <li>
@@ -42,14 +42,25 @@ const Nav = () => {
               </Link>
             </li>
           ) : (
-            <li>
-              {" "}
-              <span className="font-bold text-2xl text-green-200 flex">
-                {" "}
-                <GiChest />
-                {userAccount.credits}
-              </span>
-            </li>
+            <>
+              <li className="">
+                <span className="flex items-center font-bold text-[2rem] text-green-200 flex">
+                  {userAccount.credits}
+                  <HiMiniCurrencyDollar />
+                </span>
+              </li>
+              <li className="p-2 bg-orange-100 text-gray-600 font-bold text-2xl">
+                {userAccount.name}
+              </li>
+            </>
+          )}
+          {navState.isSmallScreen && (
+            <button
+              onClick={() =>
+                setNavState((prev) => ({ ...prev, isVisible: !prev.isVisible }))
+              }>
+              <GiHamburgerMenu />
+            </button>
           )}
         </ul>
       </nav>

@@ -4,6 +4,7 @@ import "./globals.css";
 import Nav from "./ui/components/Nav";
 import SideNav from "./ui/components/SideNav";
 import ContextContainer from "./ui/components/ContextContainer";
+import NavProvider from "./ui/components/NavProvider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,13 +26,16 @@ export default function RootLayout({
         {" "}
         <ContextContainer>
           {" "}
-          <Nav />
-          <div className="grid gridCustom h-[100%]">
-            <SideNav />
-            <div className="flex-grow h-[100vh] overflow-y-auto">
-              {children}
+          <NavProvider>
+            <Nav />
+            <div className="grid gridCustom h-[100%]">
+              <SideNav />
+
+              <div className="flex-grow h-[100vh] overflow-y-auto">
+                {children}
+              </div>
             </div>
-          </div>
+          </NavProvider>
         </ContextContainer>
       </body>
     </html>
