@@ -55,7 +55,7 @@ const LoginForm = () => {
           placeholder="*******"
         />
         <button onClick={handleSubmit} className="bg-red-200 py-3">
-          Register
+          Login
         </button>
       </form>
     </div>
