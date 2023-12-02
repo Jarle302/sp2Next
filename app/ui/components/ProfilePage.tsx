@@ -3,9 +3,9 @@
 import ProfileInfo from "./ProfileInfo";
 import ProfileListings from "./ProfileListings";
 import { UserAccount } from "@/app/ui/components/ContextContainer";
-import { usePathname } from "next/navigation";
 import { useContext } from "react";
 import AvatarChanger from "@/app/ui/components/AvatarChanger";
+import UseAssertUser from "@/app/utils/customHooks/useAssertUser";
 
 type ProfileType = {
   name: string;
@@ -37,19 +37,7 @@ const ProfilePage = ({
   _count,
 }: ProfileType) => {
   const { userAccount, setUserAccount } = useContext(UserAccount);
-
-  function assertUser() {
-    const pathName = usePathname();
-
-    let isCurrentUser = false;
-
-    if (pathName === `/profile/${userAccount.name}`) {
-      isCurrentUser = true;
-    }
-    return isCurrentUser;
-  }
-
-  const isCurrentUser = assertUser();
+  const isCurrentUser = UseAssertUser();
 
   const placeholder =
     "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png";
