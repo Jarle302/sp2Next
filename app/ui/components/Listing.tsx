@@ -39,7 +39,7 @@ const Listing = ({
   seller,
 }: ListingProps) => {
   return (
-    <div className="flex-wrap rounded-2xl height-[100vh] my-[74px] gap-[40px] flex flex-col p-[20px] md:p-[40px] md:flex-row bg-gray-600 text-orange-100">
+    <div className="flex-wrap  height-[100vh] my-[74px] gap-[40px] flex flex-col p-[20px] md:p-[40px] md:flex-row bg-gray-600 text-orange-100">
       <div>
         <h1 className="mb-[20px] text-3xl text-center md:text-7xl font-bold">
           {title}

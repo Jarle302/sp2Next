@@ -28,6 +28,7 @@ type ProductProps = {
   seller: Seller;
 };
 const ListingId = async ({ params }: paramType) => {
+  
   const response = await fetch(
     `https://api.noroff.dev/api/v1/auction/listings/${params.listingId}?_bids=true&_seller=true`,
     { cache: "no-store" }

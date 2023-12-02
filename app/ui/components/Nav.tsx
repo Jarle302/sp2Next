@@ -44,13 +44,15 @@ const Nav = () => {
           ) : (
             <>
               <li className="">
-                <span className="flex items-center font-bold text-[2rem] text-green-200 flex">
+                <span className="flex items-center font-bold text-[1rem] text-green-200 flex">
                   {userAccount.credits}
                   <HiMiniCurrencyDollar />
                 </span>
               </li>
               <li className="p-2 bg-orange-100 text-gray-600 font-bold text-2xl">
-                {userAccount.name}
+                <Link href={`/profile/${userAccount.name}`}>
+                  {userAccount.name}
+                </Link>
               </li>
             </>
           )}

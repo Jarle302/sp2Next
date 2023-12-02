@@ -147,12 +147,14 @@ const CreateListingForm = () => {
           Create Listing
         </button>
       </form>
-      <section className="w-full md:w-[50%] p-[20px] md:p-[0px] h-[833px] md:h-auto">
+      <section className="relative w-full md:w-[50%] p-[20px] md:p-[0px] h-[833px] md:h-auto">
         <h2 className="text-4xl">Preview</h2>
         {cardOrDetails === "card" && (
           <div>
             {" "}
-            <Button click={() => setCardOrDetails(() => "details")}>
+            <Button
+              className={"my-6"}
+              click={() => setCardOrDetails(() => "details")}>
               {" "}
               Show as listing
             </Button>{" "}
@@ -162,8 +164,9 @@ const CreateListingForm = () => {
         {cardOrDetails === "details" && (
           <div>
             {" "}
-            <Button click={() => setCardOrDetails(() => "card")}>
-              {" "}
+            <Button
+              className={"my-6"}
+              click={() => setCardOrDetails(() => "card")}>
               Show as Card
             </Button>{" "}
             <ListingPreview {...values} />{" "}
