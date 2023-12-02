@@ -16,7 +16,9 @@ const AvatarChanger = ({ buttonClasses }: { buttonClasses?: string }) => {
   return (
     <>
       {" "}
-      <dialog ref={dialogRef}>
+      <dialog
+        className="w-[280px] p-[20px] bg-orange-100 rounded-lg"
+        ref={dialogRef}>
         <button onClick={() => dialogRef.current?.close()}>
           <FaWindowClose />
         </button>
@@ -31,6 +33,7 @@ const AvatarChanger = ({ buttonClasses }: { buttonClasses?: string }) => {
             value={values.avatar}
           />
           <button
+            className="bg-red-200"
             onClick={async (e) => {
               e.preventDefault();
               console.log("values.avatar", values.avatar);
