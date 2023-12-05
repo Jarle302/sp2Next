@@ -6,15 +6,30 @@ import ImageComponent from "./ImageComponent";
 import Link from "next/link";
 import Input from "./Input";
 
-type CardProps = {
-  title: string;
-  _count: { bids: number };
-  media: string[];
-  endsAt: string;
-  description: string;
+type Bid = {
   id: string;
+  amount: number;
+  bidderName: string;
+  created: string;
 };
 
+type Seller = {
+  name: string;
+  email: string;
+  avatar: string;
+};
+
+type CardProps = {
+  title: string;
+  description?: string;
+  tags?: string[];
+  media?: string[];
+  endsAt: string;
+  id: string;
+  bids: Bid[];
+  seller: Seller;
+  _count: { bids: number };
+};
 const Card = ({ title, _count, media, endsAt, description, id }: CardProps) => {
   let imageProps = media && media.length > 0 ? [{ src: media[0] }] : [];
   if (media && media.length > 1) {

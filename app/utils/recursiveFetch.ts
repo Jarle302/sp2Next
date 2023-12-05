@@ -29,7 +29,7 @@ export default async function recursiveFetch(
   limit = 100
 ) {
   const response = await fetch(
-    `https://api.noroff.dev/api/v1/auction/listings?offset=${offset}&limit=${limit}`
+    `https://api.noroff.dev/api/v1/auction/listings?offset=${offset}&limit=${limit}&_bids=true&_active=true`
   );
   const data = await response.json();
   console.log(data, "logged");

@@ -48,7 +48,7 @@ const Searchbar = () => {
 
   return (
     <section>
-      <search>
+      <search className=" relative">
         <form action="">
           <div className="flex">
             <input
@@ -65,15 +65,19 @@ const Searchbar = () => {
           </div>
         </form>
       </search>
-      <div className="flex flex-col overflow-y-auto w-[200px] h-[300px]">
-        {filteredListings.length > 0 &&
-          searchQuery &&
-          filteredListings.map((listing, index) => (
-            <Link href={`/listings/${listing.id}`} key={index + listing.title}>
-              {listing.title}
-            </Link>
-          ))}
-      </div>
+      {searchQuery && (
+        <div className="absolute bg-gray-600 flex flex-col overflow-y-auto w-[200px] h-[300px]">
+          {filteredListings.length > 0 &&
+            searchQuery &&
+            filteredListings.map((listing, index) => (
+              <Link
+                href={`/listings/${listing.id}`}
+                key={index + listing.title}>
+                {listing.title}
+              </Link>
+            ))}
+        </div>
+      )}
     </section>
   );
 };
