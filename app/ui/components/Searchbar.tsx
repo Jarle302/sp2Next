@@ -4,6 +4,31 @@ import { ReducerContext } from "@/app/ui/components/ListingReducerContext";
 import useForm from "@/app/utils/customHooks/useForm";
 import Link from "next/link";
 
+type Bid = {
+  id: string;
+  amount: number;
+  bidderName: string;
+  created: string;
+};
+
+type Seller = {
+  name: string;
+  email: string;
+  avatar: string;
+};
+
+type ListingProps = {
+  title: string;
+  description?: string;
+  tags?: string[];
+  media?: string[];
+  endsAt: string;
+  id: string;
+  bids: Bid[];
+  seller: Seller;
+  _count: { bids: number };
+};
+
 const Searchbar = () => {
   const { state, dispatch } = useContext(ReducerContext);
   console.log({ state });
@@ -11,7 +36,7 @@ const Searchbar = () => {
     search: "",
   });
 
-  let filteredListings = [];
+  let filteredListings: ListingProps[] = [];
   if (Array.isArray(state) && state.length > 0 && searchQuery.search) {
     filteredListings = state.filter((listing) => {
       return listing.title
