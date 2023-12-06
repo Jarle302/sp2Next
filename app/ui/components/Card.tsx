@@ -57,7 +57,7 @@ const Card = ({ title, _count, media, endsAt, description, id }: CardProps) => {
             <Link href={`/listings/${id}`}>
               <img
                 className="w-[283px] h-[180px] object-cover"
-                src={media[0]}
+                src={media?.[0] ? media[0] : "/public/placeholder.webp"}
                 alt="Carousel Item"
               />
             </Link>
