@@ -78,7 +78,9 @@ const Searchbar = ({ Component }: { Component?: React.FC<ListingProps> }) => {
           {typeof Component !== "undefined" &&
             filteredListings.length > 0 &&
             searchQuery.search &&
-            filteredListings.map((listing) => <Component {...listing} />)}
+            filteredListings.map((listing, index) => (
+              <Component key={index} {...listing} />
+            ))}
         </div>
       )}
     </section>
