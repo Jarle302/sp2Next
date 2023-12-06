@@ -4,6 +4,8 @@ import React, { useContext, useReducer } from "react";
 import { ReducerContext } from "@/app/ui/components/ListingReducerContext";
 import sortReducer from "@/app/utils/sortReducer";
 import CardList from "@/app/ui/components/CardList";
+import Searchbar from "@/app/ui/components/Searchbar";
+import Card from "./Card";
 
 type Bid = {
   id: string;
@@ -60,7 +62,7 @@ export default function ListingsSection() {
   const [sortState, sortDispatch] = useReducer(sortReducer, state);
 
   return (
-    <section>
+    <section className="relative bg-orange-100 text-gray-600">
       <h2>Listings</h2>
       <div className="flex text-orange-100">
         <h3>Sort by</h3>
@@ -86,6 +88,7 @@ export default function ListingsSection() {
           Date
         </button>
       </div>
+      <Searchbar Component={Card} />
       <CardList data={sortState} />
     </section>
   );

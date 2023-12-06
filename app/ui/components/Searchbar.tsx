@@ -1,7 +1,6 @@
 "use client";
 
-import { IoSearchCircleSharp } from "react-icons/io5";
-import { useContext, useState, useEffect, useMemo } from "react";
+import React, { useContext, useState, useEffect, useMemo } from "react";
 import { ReducerContext } from "@/app/ui/components/ListingReducerContext";
 import useForm from "@/app/utils/customHooks/useForm";
 import Link from "next/link";
@@ -31,7 +30,7 @@ type ListingProps = {
   _count: { bids: number };
 };
 
-const Searchbar = () => {
+const Searchbar = ({ Component }: { Component?: React.FC<ListingProps> }) => {
   const { state, dispatch } = useContext(ReducerContext);
   console.log({ state });
   const [searchQuery, handleChange, reset, setSearchQuery] = useForm({
@@ -45,31 +44,29 @@ const Searchbar = () => {
         .toLowerCase()
         .includes(searchQuery.search.toLowerCase());
     });
-    console.log("rerender", filteredListings);
+    console.log(typeof Component);
   }
 
   return (
-    <section>
-      <search className=" relative">
+    <section className="w-full relative">
+      <search className=" ">
         <form action="">
-          <div className="flex">
+          <div className="flex text-gray-600">
             <input
+              className="ml-[10px] p-3"
               onChange={handleChange}
               type="text"
               name="search"
               id="search"
               placeholder="Search"
             />
-            <button className="bg-red-200 text-gray-600 w-[57pxpx] p-[4px]">
-              <IoSearchCircleSharp />
-              Search
-            </button>
           </div>
         </form>
       </search>
       {searchQuery.search && (
-        <div className="absolute bg-gray-600 flex flex-col overflow-y-auto w-[200px] h-[300px]">
-          {filteredListings.length > 0 &&
+        <div className="absolute bg-gray-600 flex flex-col overflow-y-auto w-full px-2 h-[90vh]">
+          {typeof Component === "undefined" &&
+            filteredListings.length > 0 &&
             searchQuery &&
             filteredListings.map((listing, index) => (
               <Link
@@ -78,6 +75,10 @@ const Searchbar = () => {
                 {listing.title}
               </Link>
             ))}
+          {typeof Component !== "undefined" &&
+            filteredListings.length > 0 &&
+            searchQuery.search &&
+            filteredListings.map((listing) => <Component {...listing} />)}
         </div>
       )}
     </section>
