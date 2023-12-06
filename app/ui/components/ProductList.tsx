@@ -3,17 +3,32 @@ import React, { Suspense } from "react";
 
 type ProductsProps = { url: string };
 const Products = async ({ url }: ProductsProps) => {
-  type Listing = {
-    media: string[];
+  type Bid = {
     id: string;
-    title: string;
-    description: string;
-    endsAt: string;
-    _count: { bids: number };
+    amount: number;
+    bidderName: string;
+    created: string;
   };
 
+  type Seller = {
+    name: string;
+    email: string;
+    avatar: string;
+  };
+
+  type CardProps = {
+    title: string;
+    description?: string;
+    tags?: string[];
+    media?: string[];
+    endsAt: string;
+    id: string;
+    bids: Bid[];
+    seller: Seller;
+    _count: { bids: number };
+  };
   const response = await fetch(url, { cache: "no-store" });
-  const products: Listing[] = await response.json();
+  const products: CardProps[] = await response.json();
   console.log("Products", products);
   console.log("URL", url);
   return (
