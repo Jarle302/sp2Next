@@ -42,6 +42,10 @@ function sortByDate(left: ListingProps, right: ListingProps) {
   return leftDate < rightDate ? true : false;
 }
 
+function reverseState(state: ListingProps[]) {
+  return [...state].reverse();
+}
+
 export default function searchReducer(
   state: ListingProps[],
   action: { type: string }
@@ -54,8 +58,10 @@ export default function searchReducer(
       return mergeSort(state, sortByTitle);
     }
     case "SORT_BY_DATE": {
-      return mergeSort(state, sortByDate
-      );
+      return mergeSort(state, sortByDate);
+    }
+    case "REVERSE": {
+      return reverseState(state);
     }
     default:
       return state;

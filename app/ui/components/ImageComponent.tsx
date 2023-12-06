@@ -12,8 +12,8 @@ type ImageComponentProps = {
 const ImageComponent: FC<ImageComponentProps> = ({
   src,
   alt = "test",
-  width = 183,
-  height = 100,
+  width = 283,
+  height = 180,
   classNames = "",
 }: ImageComponentProps) => {
   return (

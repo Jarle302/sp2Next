@@ -53,7 +53,7 @@ const Searchbar = ({ Component }: { Component?: React.FC<ListingProps> }) => {
         <form action="">
           <div className="flex text-gray-600">
             <input
-              className="ml-[10px] p-3"
+              className="ml-[10px] flex-basis-[100%] p-3"
               onChange={handleChange}
               type="text"
               name="search"
@@ -63,21 +63,19 @@ const Searchbar = ({ Component }: { Component?: React.FC<ListingProps> }) => {
           </div>
         </form>
       </search>
-      {searchQuery.search && (
-        <div className="absolute bg-gray-600 flex flex-col overflow-y-auto w-full px-2 h-[90vh]">
-          {typeof Component === "undefined" &&
-            filteredListings.length > 0 &&
-            searchQuery &&
-            filteredListings.map((listing, index) => (
-              <Link
-                href={`/listings/${listing.id}`}
-                key={index + listing.title}>
-                {listing.title}
-              </Link>
-            ))}
+      {searchQuery.search &&
+      filteredListings.length > 0 &&
+      typeof Component === "undefined" ? (
+        <div className="absolute bg-gray-600 flex flex-col overflow-y-auto w-full px-2 h-[90vh] wrapAnywhere">
+          {filteredListings.map((listing, index) => (
+            <Link href={`/listings/${listing.id}`} key={index + listing.title}>
+              {listing.title}
+            </Link>
+          ))}
+        </div>
+      ) : (
+        <div className="overflow-y-auto flex flex-col md:flex-row md:flex-wrap gap-[20px]">
           {typeof Component !== "undefined" &&
-            filteredListings.length > 0 &&
-            searchQuery.search &&
             filteredListings.map((listing, index) => (
               <Component key={index} {...listing} />
             ))}

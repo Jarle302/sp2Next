@@ -87,8 +87,17 @@ export default function ListingsSection() {
           }}>
           Date
         </button>
+        <button
+          className="text-orange-100 bg-gray-600 p-3"
+          onClick={() => {
+            sortDispatch({ type: "REVERSE" });
+          }}>
+          Reverse
+        </button>
       </div>
-      <Searchbar Component={Card} />
+      <div className="flex flex-col md:flex-row">
+        <Searchbar Component={Card} />
+      </div>
       <CardList data={sortState} />
     </section>
   );

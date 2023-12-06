@@ -1,6 +1,5 @@
 "use client";
 import { playfair, lato } from "../fonts/fonts";
-import Button from "./Button";
 import Carousel from "./Carusell";
 import useFetch from "@/app/utils/customHooks/useFetch";
 import Slide from "./Slide";
