@@ -41,6 +41,19 @@ const CardPreview = ({
       endsAt={endsAt}
       description={description}
       _count={placeholderCount}
+      seller={{
+        name: "placeholder",
+        email: "placeholder",
+        avatar: "placeholder",
+      }}
+      bids={[
+        {
+          id: "0001",
+          amount: 0,
+          bidderName: "placeholder",
+          created: "placeholder",
+        },
+      ]}
     />
   );
 };

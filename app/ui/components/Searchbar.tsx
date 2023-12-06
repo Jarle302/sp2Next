@@ -1,3 +1,5 @@
+"use client";
+
 import { IoSearchCircleSharp } from "react-icons/io5";
 import { useContext, useState, useEffect, useMemo } from "react";
 import { ReducerContext } from "@/app/ui/components/ListingReducerContext";
@@ -65,7 +67,7 @@ const Searchbar = () => {
           </div>
         </form>
       </search>
-      {searchQuery && (
+      {searchQuery.search && (
         <div className="absolute bg-gray-600 flex flex-col overflow-y-auto w-[200px] h-[300px]">
           {filteredListings.length > 0 &&
             searchQuery &&
