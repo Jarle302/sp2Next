@@ -158,7 +158,24 @@ const CreateListingForm = () => {
               {" "}
               Show as listing
             </Button>{" "}
-            <CardPreview {...values} />{" "}
+            <CardPreview
+              id="0002"
+              bids={[
+                {
+                  id: "0001",
+                  amount: 0,
+                  bidderName: "placeholder",
+                  created: "placeholder",
+                },
+              ]}
+              _count={{ bids: 0 }}
+              seller={{
+                name: "placeholder",
+                email: "placeholder",
+                avatar: "#",
+              }}
+              {...values}
+            />{" "}
           </div>
         )}
         {cardOrDetails === "details" && (
