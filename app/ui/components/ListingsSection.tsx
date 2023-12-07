@@ -107,11 +107,8 @@ export default function ListingsSection() {
         <Searchbar Component={Card} />
       </div>
       <CardList data={sortState.slice(0 + count, initalPagination + count)} />
-      <button onClick={() => count && setCount((prev) => prev - 10)}>
-        Previous
-      </button>
+
       <PaginationButtonGenerator array={sortState} handleClick={handleClick} />
-      <button onClick={() => setCount((prev) => prev + 10)}>Next</button>
     </section>
   );
 }

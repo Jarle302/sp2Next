@@ -17,7 +17,10 @@ const PaginationButtonGenerator = ({
 
   const pages = generatePaginationNr(array).slice(startPage - 1, endPage);
   const buttons = pages.map((nr, index) => (
-    <button key={index} onClick={() => handlePageChange(nr)}>
+    <button
+      className="bg-gray-600 text-orange-100 font-bold p-3 w-[100px]"
+      key={index}
+      onClick={() => handlePageChange(nr)}>
       {nr}
     </button>
   ));
@@ -27,10 +30,18 @@ const PaginationButtonGenerator = ({
     handleClick(page);
   };
   return (
-    <div>
-      <button onClick={() => handlePageChange(1)}>First</button>
+    <div className="w-full">
+      <button
+        className="bg-gray-600 text-orange-100 font-bold p-3 w-[100px]"
+        onClick={() => handlePageChange(1)}>
+        First
+      </button>
       {buttons}
-      <button onClick={() => handlePageChange(maxPageNr)}>Last</button>;
+      <button
+        className="bg-gray-600 text-orange-100 font-bold p-3 w-[100px]"
+        onClick={() => handlePageChange(maxPageNr)}>
+        Last
+      </button>
     </div>
   );
 };
