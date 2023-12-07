@@ -6,7 +6,8 @@ import sortReducer from "@/app/utils/sortReducer";
 import CardList from "@/app/ui/components/CardList";
 import Searchbar from "@/app/ui/components/Searchbar";
 import Card from "./Card";
-
+import { useState } from "react";
+import PaginationButtonGenerator from "./PaginationButtonGenerator";
 type Bid = {
   id: string;
   amount: number;
@@ -59,11 +60,18 @@ export default function ListingsSection() {
   const { state, dispatch } =
     useContext<ListingReducerContextType>(ReducerContext);
 
+  const [count, setCount] = useState(0);
+
+  const initalPagination = 10;
+
   const [sortState, sortDispatch] = useReducer(sortReducer, state);
 
+  const handleClick = (page: number) => {
+    setCount((page - 1) * 10);
+  };
   return (
     <section className="relative bg-orange-100 text-gray-600">
-      <h2>Listings</h2>
+      <h2 className="text-3xl font-bold">Listings</h2>
       <div className="flex text-orange-100">
         <h3>Sort by</h3>
         <button
@@ -98,7 +106,12 @@ export default function ListingsSection() {
       <div className="flex flex-col md:flex-row">
         <Searchbar Component={Card} />
       </div>
-      <CardList data={sortState} />
+      <CardList data={sortState.slice(0 + count, initalPagination + count)} />
+      <button onClick={() => count && setCount((prev) => prev - 10)}>
+        Previous
+      </button>
+      <PaginationButtonGenerator array={sortState} handleClick={handleClick} />
+      <button onClick={() => setCount((prev) => prev + 10)}>Next</button>
     </section>
   );
 }
