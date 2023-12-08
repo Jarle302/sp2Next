@@ -25,6 +25,8 @@ const login = async (values: {}, setUserAccount: stateSetter) => {
     localStorage.setItem("profile", JSON.stringify({ ...rest }));
     setUserAccount({ ...rest });
   }
+
+  return item;
 };
 
 export default login;

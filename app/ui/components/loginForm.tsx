@@ -5,6 +5,7 @@ import useForm from "@/app/utils/customHooks/useForm";
 import login from "@/app/utils/api/login";
 import { useContext } from "react";
 import { UserAccount } from "./ContextContainer";
+import { useRouter } from "next/navigation";
 
 type UserType = {
   name: string;
@@ -19,13 +20,14 @@ type UserType = {
 
 const LoginForm = () => {
   const { userAccount, setUserAccount } = useContext(UserAccount);
-
+  const router = useRouter();
   async function handleSubmit(
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) {
     e.preventDefault();
-    login(values,setUserAccount);
+    const data = await login(values, setUserAccount);
     reset();
+    data.name ? router.push("/") : null;
   }
 
   const [values, handleChange, reset] = useForm({

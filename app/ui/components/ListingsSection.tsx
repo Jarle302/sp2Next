@@ -72,7 +72,7 @@ export default function ListingsSection() {
   return (
     <section className="relative bg-orange-100 text-gray-600">
       <h2 className="text-3xl font-bold">Listings</h2>
-      <div className="flex text-orange-100">
+      <div className="flex text-orange-100 mb-3">
         <h3>Sort by</h3>
         <button
           className="text-orange-100 bg-gray-600 p-3"
