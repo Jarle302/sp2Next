@@ -1,12 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 type initialState = Record<string, string | number | boolean | string[]>;
 
 const useForm = <T>(
-  initialState: T
-): [T, (e: any) => void, () => void, (prev: any) => void] => {
+  initialState: T,
+  validateForm?: Function
+): [T, (e: any) => void, () => void, (prev: any) => void, T] => {
+  const [formErorrs, setFormErrors] = useState<T>({ ...initialState });
   const [formSate, setFormState] = useState<T>({ ...initialState });
+  const isFirstRender = useRef(true);
 
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+    } else {
+      setFormErrors(validateForm && validateForm(formSate));
+    }
+  }, [formSate]);
   const handleChange: (e: any) => void = (e) => {
     const { name, type, value, checked } = e.target;
 
@@ -17,7 +27,7 @@ const useForm = <T>(
 
   const reset = () => setFormState(initialState);
 
-  return [formSate, handleChange, reset, setFormState];
+  return [formSate, handleChange, reset, setFormState, formErorrs];
 };
 
 export default useForm;

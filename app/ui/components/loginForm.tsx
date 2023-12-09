@@ -6,6 +6,7 @@ import login from "@/app/utils/api/login";
 import { useContext } from "react";
 import { UserAccount } from "./ContextContainer";
 import { useRouter } from "next/navigation";
+import validateLogin from "@/app/utils/formValidation/login";
 
 type UserType = {
   name: string;
@@ -30,10 +31,13 @@ const LoginForm = () => {
     data.name ? router.push("/") : null;
   }
 
-  const [values, handleChange, reset] = useForm({
-    email: "",
-    password: "",
-  });
+  const [values, handleChange, reset, setFormState, formErrors] = useForm(
+    {
+      email: "",
+      password: "",
+    },
+    validateLogin
+  );
   return (
     <div className="max-w-[400px] m-auto">
       <h1 className="md:text-3xl text-2xl font-bold">Login</h1>
@@ -46,7 +50,9 @@ const LoginForm = () => {
           id="email"
           label="Email"
           placeholder="yourEmail@domain.com"
+          formErrors={formErrors.email}
         />
+
         <Input
           handleChange={handleChange}
           type="password"
@@ -55,6 +61,7 @@ const LoginForm = () => {
           name="password"
           label="Password"
           placeholder="*******"
+          formErrors={formErrors.password}
         />
         <button onClick={handleSubmit} className="bg-red-200 py-3">
           Login

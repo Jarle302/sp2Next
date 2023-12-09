@@ -1,3 +1,4 @@
+import { error } from "console";
 import { ChangeEvent } from "react";
 
 type InputProps = {
@@ -8,6 +9,7 @@ type InputProps = {
   placeholder?: string;
   value?: any;
   handleChange?: (e: ChangeEvent) => void;
+  formErrors?: string;
 };
 
 const Input = ({
@@ -18,12 +20,16 @@ const Input = ({
   placeholder,
   value,
   handleChange,
+  formErrors,
 }: InputProps) => {
   return (
-    <div className="flex flex-col my-3">
+    <div className="flex flex-col my-3 ">
       <label className="font-bold text-2xl mb-3" htmlFor={id}>
         {label}
       </label>
+      {formErrors && (
+        <p className="font-bold text-[1rem] text-red-600">{formErrors}</p>
+      )}
       {type === "textarea" ? (
         <textarea
           onChange={handleChange}
