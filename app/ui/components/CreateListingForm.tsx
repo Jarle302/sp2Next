@@ -8,6 +8,7 @@ import fetchFunction from "@/app/utils/fetchFunction";
 import { useState } from "react";
 import Descriptify from "@/app/utils/Descriptify";
 import Loader from "./Loader";
+import validateCreateListing from "@/app/utils/formValidation/createListing";
 
 type CreateListFormProps = {
   [key: string]: string | string[] | undefined;
@@ -23,15 +24,17 @@ const CreateListingForm = () => {
     "card"
   );
 
-  const [values, handleChange, reset, setValues] = useForm<CreateListFormProps>(
-    {
-      title: "",
-      description: "",
-      tags: [],
-      media: [],
-      endsAt: "",
-    }
-  );
+  const [values, handleChange, reset, setValues, formErrors] =
+    useForm<CreateListFormProps>(
+      {
+        title: "",
+        description: "",
+        tags: [],
+        media: [],
+        endsAt: "",
+      },
+      validateCreateListing
+    );
 
   function pushToArray(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     event.preventDefault();
@@ -64,6 +67,7 @@ const CreateListingForm = () => {
           id="title"
           value={values.title}
           placeholder="title"
+          formErrors={formErrors.title}
         />
         <div className="flex relative">
           <Input
@@ -74,6 +78,8 @@ const CreateListingForm = () => {
             id="description"
             value={values.description}
             placeholder="description"
+            formErrors={formErrors.description}
+            required={false}
           />
 
           {isLoading && <Loader className="bg-orange-100" />}
@@ -105,6 +111,7 @@ const CreateListingForm = () => {
           id="endsAt"
           value={values.endsAt}
           placeholder=""
+          formErrors={formErrors.endsAt}
         />
         <div className="flex flex-col">
           <Input
@@ -113,6 +120,8 @@ const CreateListingForm = () => {
             label="media"
             id="media"
             placeholder="media"
+            formErrors={formErrors.media?.[0]}
+            required={false}
           />
           <button
             className="bg-red-200"
@@ -127,6 +136,8 @@ const CreateListingForm = () => {
             label="tags"
             id="tags"
             placeholder="tags"
+            formErrors={formErrors.tags?.[0]}
+            required={false}
           />
           <button
             className="bg-red-200"
@@ -138,11 +149,13 @@ const CreateListingForm = () => {
           className="py-[10px] bg-red-200 mt-[20px]"
           onClick={(e) => {
             e.preventDefault();
-            fetchFunction(
-              "https://api.noroff.dev/api/v1/auction/listings",
-              "POST",
-              values
-            );
+            if (!formErrors.title && !formErrors.endsAt) {
+              fetchFunction(
+                "https://api.noroff.dev/api/v1/auction/listings",
+                "POST",
+                values
+              );
+            }
           }}>
           Create Listing
         </button>

@@ -10,6 +10,7 @@ type InputProps = {
   value?: any;
   handleChange?: (e: ChangeEvent) => void;
   formErrors?: string;
+  required?: boolean;
 };
 
 const Input = ({
@@ -21,6 +22,7 @@ const Input = ({
   value,
   handleChange,
   formErrors,
+  required = true,
 }: InputProps) => {
   return (
     <div className="flex flex-col my-3 ">
