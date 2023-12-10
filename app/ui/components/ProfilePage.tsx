@@ -72,7 +72,7 @@ const ProfilePage = ({
               <ProfileInfo
                 className="lg:justify-between mt-4 text-4xl lg:mt-0 flex  gap-4 transform translate-y-[167px] lg:transform-none text-orange-100"
                 category="Wins"
-                value={wins.length}
+                value={wins?.length}
               />
               <ProfileInfo
                 className="lg:text-4xl lg:justify-between flex-col text-xl lg:flex-row lg:text-orange-100"

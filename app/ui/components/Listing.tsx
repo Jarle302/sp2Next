@@ -40,11 +40,18 @@ const Listing = ({
 }: ListingProps) => {
   return (
     <div className="flex-wrap  height-[100vh] my-[74px] gap-[40px] flex flex-col p-[20px] md:p-[40px] md:flex-row bg-gray-600 text-orange-100">
+      <h1 className="mb-[20px] text-3xl text-start md:text-4xl font-bold w-full">
+        {title.slice(0, 60)}
+      </h1>
       <div>
-        <h1 className="mb-[20px] text-3xl text-center md:text-7xl font-bold">
-          {title}
-        </h1>
-        <ThumbnailGallery media={media} />
+        {media?.[0] ? (
+          <ThumbnailGallery media={media} />
+        ) : (
+          <img
+            className="md:w-[360px] md:h-[360px] w-[300px] h-[300px]"
+            src="/ListingPlaceholder.png"
+          />
+        )}
       </div>
       <div className="flex p-[20px] flex-col justify-evenly bg-[#3d4550]">
         <h2 className="text-2xl max-w-[700px]">{description}</h2>
