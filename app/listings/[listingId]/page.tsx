@@ -1,5 +1,7 @@
-import { Suspense } from "react";
+"use client";
 import Listing from "@/app/ui/components/Listing";
+import { ReducerContext } from "@/app/ui/components/ListingReducerContext";
+import { useContext } from "react";
 
 type paramType = {
   params: { listingId: string };
@@ -27,22 +29,30 @@ type ProductProps = {
   bids: Bid[];
   seller: Seller;
 };
+
+type ListingProps = {
+  title: string;
+  description?: string;
+  tags?: string[];
+  media?: string[];
+  endsAt: string;
+  id: string;
+  bids: Bid[];
+  seller: Seller;
+  _count: { bids: number };
+};
+
 const ListingId = async ({ params }: paramType) => {
-  
-  const response = await fetch(
-    `https://api.noroff.dev/api/v1/auction/listings/${params.listingId}?_bids=true&_seller=true`,
-    { cache: "no-store" }
+  const { state, dispatch } = useContext(ReducerContext);
+
+  const product: ListingProps = state.find(
+    (item) => item.id === params.listingId
   );
-  const product: ProductProps = await response.json();
-  const { title, _count, media, endsAt, description, id, bids, seller } =
-    product;
-  console.log(product);
   return (
-    <Suspense fallback={<div>LOADING....</div>}>
       <main className="flex justify-center">
-        <Listing {...product} />
+        {product && <Listing {...product} />}
       </main>
-    </Suspense>
+    
   );
 };
 

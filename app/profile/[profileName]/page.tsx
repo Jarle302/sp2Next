@@ -1,14 +1,11 @@
 "use client";
 import ProfilePage from "@/app/ui/components/ProfilePage";
 import fetchFunction from "@/app/utils/fetchFunction";
-import { useEffect, useState,useContext } from "react";
+import { useEffect, useState, useContext } from "react";
 
 type ParamType = { params: { profileName: string } };
 
-
-
-const ProfileId = ({ params }: ParamType) => {
-
+export default function ProfileId({ params }: ParamType) {
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -29,7 +26,5 @@ const ProfileId = ({ params }: ParamType) => {
       setData(data);
     })();
   }, []);
-  return <ProfilePage {...data} />;
-};
-
-export default ProfileId;
+  return <ProfilePage {...data} setState={setData} />;
+}

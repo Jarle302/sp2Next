@@ -27,9 +27,10 @@ const fetchFunction = async (url: string, method: string, body?: {}) => {
     },
     body: JSON.stringify(body),
   });
-
+  if (options.method === "DELETE") {
+    return;
+  }
   const data = await response.json();
-  console.log("data", data);
   return data;
 };
 export default fetchFunction;

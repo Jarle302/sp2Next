@@ -7,6 +7,26 @@ import { useContext } from "react";
 import AvatarChanger from "@/app/ui/components/AvatarChanger";
 import UseAssertUser from "@/app/utils/customHooks/useAssertUser";
 
+type state = {
+  name: string;
+  email: string;
+  avatar: string;
+  credits: number;
+  wins: string[];
+  listings: {
+    id: string;
+    title: string;
+    description: string;
+    media: string[];
+    created: string;
+    updated: string;
+    endsAt: string;
+  }[];
+  _count: {
+    listings: number;
+  };
+};
+
 type ProfileType = {
   name: string;
   email: string;
@@ -27,6 +47,10 @@ type ProfileType = {
   };
 };
 
+type ProfilePageProps = ProfileType & {
+  setState: React.Dispatch<React.SetStateAction<state>>;
+};
+
 const ProfilePage = ({
   name,
   email,
@@ -35,9 +59,11 @@ const ProfilePage = ({
   wins,
   listings,
   _count,
-}: ProfileType) => {
+  setState,
+}: ProfilePageProps) => {
   const { userAccount, setUserAccount } = useContext(UserAccount);
   const isCurrentUser = UseAssertUser();
+  console.log(isCurrentUser, "from profile page");
 
   const placeholder =
     "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png";
@@ -91,7 +117,11 @@ const ProfilePage = ({
         </div>
       </section>
 
-      <ProfileListings listings={listings} />
+      <ProfileListings
+        listings={listings}
+        isCurrentUser={isCurrentUser}
+        setState={setState}
+      />
     </div>
   );
 };

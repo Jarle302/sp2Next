@@ -27,10 +27,23 @@ type ListingProps = {
   _count: { bids: number };
 };
 
-type Action = {
-  payload: ListingProps;
-  type: string;
-};
+type Action =
+  | { type: "ADD"; payload: ListingProps }
+  | { type: "DELETE"; payload: { id: string } }
+  | {
+      type: "UPDATE";
+      payload: {
+        title: string;
+        description?: string;
+        tags?: string[];
+        media?: string[];
+        endsAt?: string;
+        id?: string;
+        bids?: Bid[];
+        seller?: Seller;
+        _count?: { bids: number };
+      };
+    };
 
 type ListingReducerContextType = {
   state: ListingProps[];
