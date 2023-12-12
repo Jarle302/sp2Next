@@ -11,9 +11,21 @@ export default function ProfileId({ params }: ParamType) {
     email: "",
     avatar: "",
     credits: 0,
-    wins: [],
-    listings: [],
-    _count: { listings: 0 },
+    wins: [""],
+    listings: [
+      {
+        id: "",
+        title: "",
+        description: "",
+        media: [""],
+        created: "",
+        updated: "",
+        endsAt: "",
+      },
+    ],
+    _count: {
+      listings: 0,
+    },
   });
 
   useEffect(() => {
