@@ -12,6 +12,7 @@ type state = {
     title: string;
     description: string;
     media: string[];
+    tags: string[];
     created: string;
     updated: string;
     endsAt: string;

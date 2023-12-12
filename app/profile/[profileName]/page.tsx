@@ -1,7 +1,7 @@
 "use client";
 import ProfilePage from "@/app/ui/components/ProfilePage";
 import fetchFunction from "@/app/utils/fetchFunction";
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 
 type ParamType = { params: { profileName: string } };
 
@@ -18,6 +18,7 @@ export default function ProfileId({ params }: ParamType) {
         title: "",
         description: "",
         media: [""],
+        tags: [""],
         created: "",
         updated: "",
         endsAt: "",
