@@ -7,7 +7,6 @@ import { useContext } from "react";
 import AvatarChanger from "@/app/ui/components/AvatarChanger";
 import UseAssertUser from "@/app/utils/customHooks/useAssertUser";
 
-
 type state = {
   name: string;
   email: string;
@@ -39,6 +38,7 @@ type ProfileType = {
     title: string;
     description: string;
     media: string[];
+    tags: string[];
     created: string;
     updated: string;
     endsAt: string;
@@ -107,14 +107,15 @@ const ProfilePage = ({
                 value={_count?.listings}
               />
             </div>
-            {isCurrentUser && (<>
-              <AvatarChanger
-                buttonClasses={
-                  "lg-rounded-none mt-[20px] py-[20px] px-[30px] rounded-2xl absolute bg-red-200 lg:static lg:transform-none text-gray-600 top-[450px] transform -translate-x-[83px]"
-                }
-              />
-           
-           </> )}
+            {isCurrentUser && (
+              <>
+                <AvatarChanger
+                  buttonClasses={
+                    "lg-rounded-none mt-[20px] py-[20px] px-[30px] rounded-2xl absolute bg-red-200 lg:static lg:transform-none text-gray-600 top-[450px] transform -translate-x-[83px]"
+                  }
+                />
+              </>
+            )}
           </div>
         </div>
       </section>
