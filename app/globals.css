@@ -29,8 +29,7 @@ body {
 }
 
 .custom-responsive-font {
-  font-size: 8rem;
-  font-size: min(max(19vw, 2rem), 8rem);
+  font-size: min(max(19vw, 2rem), 6rem);
 }
 
 .temporary-footer {
@@ -113,8 +112,7 @@ body {
   grid-template-columns: auto 1fr;
 }
 
-
-.wrapAnywhere{
+.wrapAnywhere {
   overflow-wrap: anywhere;
 }
 

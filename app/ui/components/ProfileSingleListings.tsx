@@ -1,4 +1,5 @@
-import DeleteButton from "./DeleteButton";
+import EditDelete from "./EditDelete";
+import Link from "next/link";
 
 type state = {
   name: string;
@@ -28,6 +29,7 @@ type listing = {
   created: string;
   updated: string;
   endsAt: string;
+  tags: string[];
 };
 
 type listingProps = listing & {
@@ -44,22 +46,21 @@ const ProfileSingleListing = ({
   updated,
   endsAt,
   isCurrentUser,
+  tags,
   setState,
 }: listingProps) => {
   console.log(isCurrentUser);
   return (
     <div className="flex p-[10px] justify-between">
       {isCurrentUser && (
-        <DeleteButton
-          className="bg-red-200 text-gray-600"
-          id={id}
-          setState={setState}
-        />
+        <EditDelete {...{ title, description, id, media, tags, setState }} />
       )}
       <div className="max-w-[300px]">
-        <h3 className="text-2xl font-bold">{title}</h3>
+        <Link href={`/listings/${id}`}>
+          <h3 className="text-2xl font-bold">{title}</h3>
+        </Link>
         <p>{description}</p>
-        <p>{endsAt}</p>
+        <p>{`Ends ${endsAt.split("T")[0]}`}</p>
       </div>
       <img
         className="w-[215px] h-[215px] object-cover"

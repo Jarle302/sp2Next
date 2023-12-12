@@ -2,6 +2,7 @@ import deleteListing from "@/app/utils/api/deleteListing";
 import ListingReducerContext from "./ListingReducerContext";
 import { ReducerContext } from "./ListingReducerContext";
 import { useContext } from "react";
+import { MdDelete } from "react-icons/md";
 
 type state = {
   name: string;
@@ -46,7 +47,7 @@ export default function DeleteButton({
             _count: { listings: prev._count.listings - 1 },
           }));
       }}>
-      Delete
+      <MdDelete />
     </button>
   );
 }

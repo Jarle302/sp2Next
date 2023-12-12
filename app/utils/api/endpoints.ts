@@ -1,5 +1,7 @@
 const baseUrl: string = "https://api.noroff.dev/api/v1/auction";
 
+export const listingId = (id: string) => `${baseUrl}/listings/${id}`;
+
 export const changeAvatarUrl = (userId: string) =>
   `${baseUrl}/profiles/${userId}/media`;
 

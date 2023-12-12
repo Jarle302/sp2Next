@@ -33,7 +33,7 @@ export default function validateCreateListing({
     errors.media[0] =
       "Media is optional, but is adviced to include a picture(validURL) for best results";
   }
-  if (endsAt.length < 1) {
+  if (endsAt?.length < 1) {
     errors.endsAt = "End date is required";
   }
   return errors;

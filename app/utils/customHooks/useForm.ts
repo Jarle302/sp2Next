@@ -7,16 +7,16 @@ const useForm = <T>(
   validateForm?: Function
 ): [T, (e: any) => void, () => void, (prev: any) => void, T] => {
   const [formErorrs, setFormErrors] = useState<T>({ ...initialState });
-  const [formSate, setFormState] = useState<T>({ ...initialState });
+  const [formState, setFormState] = useState<T>({ ...initialState });
   const isFirstRender = useRef(true);
 
   useEffect(() => {
     if (isFirstRender.current) {
       isFirstRender.current = false;
     } else {
-      setFormErrors(validateForm && validateForm(formSate));
+      setFormErrors(validateForm && validateForm(formState));
     }
-  }, [formSate]);
+  }, [formState]);
   const handleChange: (e: any) => void = (e) => {
     const { name, type, value, checked } = e.target;
 
@@ -27,7 +27,7 @@ const useForm = <T>(
 
   const reset = () => setFormState(initialState);
 
-  return [formSate, handleChange, reset, setFormState, formErorrs];
+  return [formState, handleChange, reset, setFormState, formErorrs];
 };
 
 export default useForm;
