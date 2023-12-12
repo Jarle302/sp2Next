@@ -57,8 +57,7 @@ const words = [
 ];
 
 export default function ListingsSection() {
-  const { state, dispatch } =
-    useContext<ListingReducerContextType>(ReducerContext);
+  const { state, dispatch } = useContext(ReducerContext);
 
   const [count, setCount] = useState(0);
 
