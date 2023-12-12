@@ -45,14 +45,28 @@ type ListingProps = {
 const ListingId = async ({ params }: paramType) => {
   const { state, dispatch } = useContext(ReducerContext);
 
-  const product: ListingProps = state.find(
-    (item) => item.id === params.listingId
-  );
+  let product: ListingProps = {
+    title: "",
+    description: "",
+    tags: [],
+    media: [],
+    endsAt: "",
+    id: "",
+    bids: [],
+    seller: { name: "", email: "", avatar: "" },
+    _count: { bids: 0 },
+  };
+
+  const isThisDefined = state.find((item) => item.id === params.listingId);
+
+  if (isThisDefined) {
+    product = isThisDefined;
+  }
+
   return (
-      <main className="flex justify-center">
-        {product && <Listing {...product} />}
-      </main>
-    
+    <main className="flex justify-center">
+      {product.title && <Listing {...product} />}
+    </main>
   );
 };
 
