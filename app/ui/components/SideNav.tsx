@@ -1,21 +1,27 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { NavContext } from "./NavProvider";
 import Searchbar from "./Searchbar";
 import LogoutButton from "./LogoutButton";
 import { FaHome } from "react-icons/fa";
-import { SiAddthis } from "react-icons/si";
 import { MdEmail } from "react-icons/md";
 import { RiAuctionFill } from "react-icons/ri";
 import { MdOutlineLogout } from "react-icons/md";
 import { BsFillPeopleFill } from "react-icons/bs";
 
-
 const SideNav = () => {
   const { navState, setNavState } = useContext(NavContext);
   const pathName = usePathname();
+
+  function closeNav(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
+    
+    if (navState.isSmallScreen) {
+      setNavState({ ...navState, isVisible: !navState.isVisible });
+    }
+  }
+
   return (
     <>
       {navState.isVisible && (
@@ -29,8 +35,8 @@ const SideNav = () => {
                   : " w-[200px]  font-bold text-xl"
               }>
               {" "}
-              <Link className="flex gap-2" href="/">
-                <FaHome className="text-[2rem]" /> Home
+              <Link onClick={closeNav} className="flex gap-2" href="/">
+                  <FaHome className="text-[2rem]" /> Home
               </Link>{" "}
             </li>
 
@@ -40,8 +46,8 @@ const SideNav = () => {
                   ? "underline decoration-8 decoration-red-200	  w-[200px]  font-bold text-xl"
                   : " w-[200px]  font-bold text-xl"
               }>
-              <Link className="flex gap-2" href="/listings/create">
-              <RiAuctionFill className="text-[2rem]" /> New Listing
+              <Link onClick={closeNav} className="flex gap-2" href="/listings/create">
+                  <RiAuctionFill className="text-[2rem]" /> New Listing
               </Link>
             </li>
             <li
@@ -50,8 +56,8 @@ const SideNav = () => {
                   ? "underline decoration-8 decoration-red-200	  w-[200px]  font-bold text-xl"
                   : " w-[200px]  font-bold text-xl"
               }>
-              <Link className="flex gap-2" href="/about">
-                <BsFillPeopleFill className="text-[2rem]" /> About
+              <Link onClick={closeNav} className="flex gap-2" href="/about">
+                  <BsFillPeopleFill className="text-[2rem]" /> About
               </Link>
             </li>
             <li
@@ -60,8 +66,8 @@ const SideNav = () => {
                   ? "underline decoration-8 decoration-red-200	  w-[200px]  font-bold text-xl"
                   : " w-[200px]  font-bold text-xl"
               }>
-              <Link className="flex gap-2" href="/contact">
-                <MdEmail className="text-[2rem]" /> Contact
+              <Link onClick={closeNav} className="flex gap-2" href="/contact">
+                  <MdEmail className="text-[2rem]" /> Contact
               </Link>
             </li>
           </ul>

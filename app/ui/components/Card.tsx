@@ -4,7 +4,7 @@ import { lato } from "../fonts/fonts";
 import Carusel from "./Carusell";
 import ImageComponent from "./ImageComponent";
 import Link from "next/link";
-import Input from "./Input";
+import { HiMiniCurrencyDollar } from "react-icons/hi2";
 
 type Bid = {
   id: string;
@@ -30,7 +30,15 @@ type CardProps = {
   seller: Seller;
   _count: { bids: number };
 };
-const Card = ({ title, _count, media, endsAt, description, id }: CardProps) => {
+const Card = ({
+  title,
+  _count,
+  media,
+  endsAt,
+  description,
+  id,
+  bids,
+}: CardProps) => {
   let imageProps = media && media.length > 0 ? [{ src: media[0] }] : [];
   if (media && media.length > 1) {
     imageProps = media.map((image) => ({
@@ -40,6 +48,7 @@ const Card = ({ title, _count, media, endsAt, description, id }: CardProps) => {
     }));
   }
   const timeRemaining = getTimeRemaining(endsAt);
+  console.log(bids);
   return (
     <div className=" w-[285px] h-[352px] border border-solid border-gray-600 border-3 rounded-2xl bg-orange-100 flex flex-col items-center shadow-lg">
       <div className="flex flex-col justify-between  w-full h-full rounded-xl  border-2 border-solid border-gray-600 border-t-none">
@@ -63,10 +72,18 @@ const Card = ({ title, _count, media, endsAt, description, id }: CardProps) => {
           )}
           <div className="flex flex-col items-center gap-3 ">
             <div className="flex w-full justify-between border border-solid border-gray-600 bg-gray-600 text-white p-1">
-              <p className="text-orange-200 ">
-                Bids {_count?.bids ? _count.bids : 0}
+              <p className="text-green-200 flex ">
+                <HiMiniCurrencyDollar />{" "}
+                {
+                  <span
+                    suppressHydrationWarning={true}
+                    className="font-bold text-green-200">
+                    {" "}
+                    {bids?.[0]?.amount || 0}
+                  </span>
+                }
               </p>
-              <p suppressHydrationWarning>
+              <p suppressHydrationWarning={true}>
                 {timeRemaining.days >= 0 ? (
                   <>
                     <span

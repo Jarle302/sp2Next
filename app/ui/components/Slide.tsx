@@ -23,13 +23,13 @@ const Slide = ({ children, title, _count, media, endsAt, id }: SlideProps) => {
       {media && (
         <img
           className="w-[350px] h-[350px] object-cover rounded-2xl"
-          src={media[0]}
+          src={media[0] || "/ListingPlaceholder.png"}
           alt="Carousel Item"
         />
       )}
       <div className="px-2 transform -translate-x-[1px] -translate-y-[48px] rounded-2xl bg-gray-700 bg-opacity-90">
         <p className="text-orange-200">Bids {_count?.bids ? _count.bids : 0}</p>
-        <p>
+        <p suppressHydrationWarning={true}>
           {timeRemaining.days >= 0 ? (
             <>
               <span className={`text-red-200 text-bold ${lato.className}`}>

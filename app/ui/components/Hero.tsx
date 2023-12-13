@@ -1,15 +1,14 @@
 "use client";
 import { playfair, lato } from "../fonts/fonts";
 import Carousel from "./Carusell";
-import useFetch from "@/app/utils/customHooks/useFetch";
 import Slide from "./Slide";
 import Link from "next/link";
+import { useContext } from "react";
+import { ReducerContext } from "./ListingReducerContext";
 
 export default function Hero() {
-  const items = useFetch(
-    "https://api.noroff.dev/api/v1/auction/listings",
-    (data: { media: string[] }) => data.media.length > 0
-  );
+  const { state } = useContext(ReducerContext);
+  const items = state.slice(0, 10);
   return (
     <section className="flex gap-10 justify-between flex-wrap">
       <div className="min-w-[300px] flex-1  flex gap-3 flex-col">
