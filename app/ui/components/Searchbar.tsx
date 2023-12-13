@@ -48,8 +48,8 @@ const Searchbar = ({ Component }: { Component?: React.FC<ListingProps> }) => {
   }
 
   return (
-    <section className="w-full relative">
-      <search className=" ">
+    <section className="w-full relative flex">
+      <search className="m-auto">
         <form action="">
           <div className="flex text-gray-600">
             <input
