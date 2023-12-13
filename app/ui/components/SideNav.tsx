@@ -5,6 +5,13 @@ import { useContext } from "react";
 import { NavContext } from "./NavProvider";
 import Searchbar from "./Searchbar";
 import LogoutButton from "./LogoutButton";
+import { FaHome } from "react-icons/fa";
+import { SiAddthis } from "react-icons/si";
+import { MdEmail } from "react-icons/md";
+import { RiAuctionFill } from "react-icons/ri";
+import { MdOutlineLogout } from "react-icons/md";
+import { BsFillPeopleFill } from "react-icons/bs";
+
 
 const SideNav = () => {
   const { navState, setNavState } = useContext(NavContext);
@@ -12,9 +19,9 @@ const SideNav = () => {
   return (
     <>
       {navState.isVisible && (
-        <aside className="gap-[40px] z-10 top-[74px] absolute h-full md:static flex w-full md:w-[239px] bg-gray-600 text-orange-100 flex-col pt-[40px] items-center ">
+        <aside className="gap-[40px] z-10 top-[74px] absolute h-full md:static flex w-full md:w-[245px] bg-gray-600 text-orange-100 flex-col pt-[40px] items-center ">
           <Searchbar />
-          <ul className="flex flex-col gap-[35px] ">
+          <ul className="flex flex-col gap-[15px] ">
             <li
               className={
                 pathName === "/"
@@ -22,18 +29,19 @@ const SideNav = () => {
                   : " w-[200px]  font-bold text-xl"
               }>
               {" "}
-              <Link href="/">Home</Link>{" "}
+              <Link className="flex gap-2" href="/">
+                <FaHome className="text-[2rem]" /> Home
+              </Link>{" "}
             </li>
 
-            <li>
-              <Link
-                className={
-                  pathName === "/listings/create"
-                    ? "underline decoration-8 decoration-red-200	  w-[200px]  font-bold text-xl"
-                    : " w-[200px]  font-bold text-xl"
-                }
-                href="/listings/create">
-                Create new listing
+            <li
+              className={
+                pathName === "/listings/create"
+                  ? "underline decoration-8 decoration-red-200	  w-[200px]  font-bold text-xl"
+                  : " w-[200px]  font-bold text-xl"
+              }>
+              <Link className="flex gap-2" href="/listings/create">
+              <RiAuctionFill className="text-[2rem]" /> New Listing
               </Link>
             </li>
             <li
@@ -42,7 +50,9 @@ const SideNav = () => {
                   ? "underline decoration-8 decoration-red-200	  w-[200px]  font-bold text-xl"
                   : " w-[200px]  font-bold text-xl"
               }>
-              <Link href="/about">About</Link>
+              <Link className="flex gap-2" href="/about">
+                <BsFillPeopleFill className="text-[2rem]" /> About
+              </Link>
             </li>
             <li
               className={
@@ -50,10 +60,15 @@ const SideNav = () => {
                   ? "underline decoration-8 decoration-red-200	  w-[200px]  font-bold text-xl"
                   : " w-[200px]  font-bold text-xl"
               }>
-              <Link href="/contact">Contact</Link>
+              <Link className="flex gap-2" href="/contact">
+                <MdEmail className="text-[2rem]" /> Contact
+              </Link>
             </li>
           </ul>
-          <LogoutButton>Logout</LogoutButton>
+          <LogoutButton>
+            <MdOutlineLogout />
+            Logout
+          </LogoutButton>
         </aside>
       )}
     </>

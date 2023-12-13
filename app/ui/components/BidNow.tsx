@@ -6,6 +6,8 @@ import updateCredit from "@/app/utils/updateCredit";
 import { useContext } from "react";
 import { UserAccount } from "./ContextContainer";
 import { ReducerContext } from "./ListingReducerContext";
+import Link from "next/link";
+import NotAuser from "./NotAUser";
 
 const BidNow = ({ id }: { id: string }) => {
   const { userAccount, setUserAccount } = useContext(UserAccount);
@@ -27,23 +29,30 @@ const BidNow = ({ id }: { id: string }) => {
   }
   return (
     <div className="flex flex-col">
-      <Input
-        type="number"
-        name="amount"
-        label="Bid Amount"
-        id="amount"
-        placeholder="Bid Amount"
-        value={values.amount}
-        handleChange={handleChange}
-      />
-      <button
-        className="bg-red-200 p-5 text-gray-600 font-bold text-2xl"
-        onClick={(e) => {
-          e.preventDefault();
-          handleBid();
-        }}>
-        Bid Now!
-      </button>
+      {userAccount.name ? (
+        <>
+          {" "}
+          <Input
+            type="number"
+            name="amount"
+            label="Bid Amount"
+            id="amount"
+            placeholder="Bid Amount"
+            value={values.amount}
+            handleChange={handleChange}
+          />
+          <button
+            className="bg-red-200 p-5 text-gray-600 font-bold text-2xl"
+            onClick={(e) => {
+              e.preventDefault();
+              handleBid();
+            }}>
+            Bid Now!
+          </button>
+        </>
+      ) : (
+        <NotAuser />
+      )}
     </div>
   );
 };

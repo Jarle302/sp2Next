@@ -43,7 +43,7 @@ export default function EditDelete({
   setState,
 }: ListingEditerProps) {
   return (
-    <div>
+    <div className="text-2xl">
       <DeleteButton
         className="bg-red-200 text-gray-600"
         id={id}
