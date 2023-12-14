@@ -25,6 +25,7 @@ const RegisterForm = () => {
       "POST",
       values
     );
+    console.log(item);
     reset();
   }
 
