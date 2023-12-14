@@ -16,7 +16,6 @@ const SideNav = () => {
   const pathName = usePathname();
 
   function closeNav(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
-    
     if (navState.isSmallScreen) {
       setNavState({ ...navState, isVisible: !navState.isVisible });
     }
@@ -25,7 +24,7 @@ const SideNav = () => {
   return (
     <>
       {navState.isVisible && (
-        <aside className="gap-[40px] z-10 top-[74px] absolute h-full md:static flex w-full md:w-[245px] bg-gray-600 text-orange-100 flex-col pt-[40px] items-center ">
+        <aside className="gap-[40px] w-[267px]  z-10 top-[74px] absolute h-full md:static flex md:w-full md:w-[245px] bg-gray-600 text-orange-100 flex-col pt-[40px] items-center ">
           <Searchbar />
           <ul className="flex flex-col gap-[15px] ">
             <li
@@ -36,7 +35,7 @@ const SideNav = () => {
               }>
               {" "}
               <Link onClick={closeNav} className="flex gap-2" href="/">
-                  <FaHome className="text-[2rem]" /> Home
+                <FaHome className="text-[2rem]" /> Home
               </Link>{" "}
             </li>
 
@@ -46,8 +45,11 @@ const SideNav = () => {
                   ? "underline decoration-8 decoration-red-200	  w-[200px]  font-bold text-xl"
                   : " w-[200px]  font-bold text-xl"
               }>
-              <Link onClick={closeNav} className="flex gap-2" href="/listings/create">
-                  <RiAuctionFill className="text-[2rem]" /> New Listing
+              <Link
+                onClick={closeNav}
+                className="flex gap-2"
+                href="/listings/create">
+                <RiAuctionFill className="text-[2rem]" /> New Listing
               </Link>
             </li>
             <li
@@ -57,7 +59,7 @@ const SideNav = () => {
                   : " w-[200px]  font-bold text-xl"
               }>
               <Link onClick={closeNav} className="flex gap-2" href="/about">
-                  <BsFillPeopleFill className="text-[2rem]" /> About
+                <BsFillPeopleFill className="text-[2rem]" /> About
               </Link>
             </li>
             <li
@@ -67,7 +69,7 @@ const SideNav = () => {
                   : " w-[200px]  font-bold text-xl"
               }>
               <Link onClick={closeNav} className="flex gap-2" href="/contact">
-                  <MdEmail className="text-[2rem]" /> Contact
+                <MdEmail className="text-[2rem]" /> Contact
               </Link>
             </li>
           </ul>
