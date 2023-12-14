@@ -6,11 +6,12 @@ import updateCredit from "@/app/utils/updateCredit";
 import { useContext } from "react";
 import { UserAccount } from "./ContextContainer";
 import { ReducerContext } from "./ListingReducerContext";
-import bidNowEval from "@/app/utils/formValidation/bidNowEval";
+import formEval from "@/app/utils/formValidation/bidNowEval";
 
-const BidNow = ({ id }: { id: string; lastBid: number }) => {
+const BidNow = ({ id, lastBid }: { id: string; lastBid: number }) => {
   const { userAccount, setUserAccount } = useContext(UserAccount);
-  const [values, handleChange, reset, setValues] = useForm(
+  const bidNowEval = formEval(lastBid);
+  const [values, handleChange, reset, setValues, formErrors] = useForm(
     { amount: "" },
     bidNowEval
   );
@@ -39,6 +40,7 @@ const BidNow = ({ id }: { id: string; lastBid: number }) => {
         placeholder="Bid Amount"
         value={values.amount}
         handleChange={handleChange}
+        formErrors={formErrors.amount}
       />
       <button
         className="bg-red-200 p-5 text-gray-600 font-bold text-2xl"
