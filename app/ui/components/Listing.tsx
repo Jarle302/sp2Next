@@ -60,7 +60,6 @@ const Listing = ({
       <div className="flex p-[20px] flex-col justify-evenly bg-[#3d4550] relative">
         <h2 className="text-2xl max-w-[700px]">{description}</h2>
 
-        <SellerCard {...seller} />
         <BidCountdown endsAt={endsAt} />
         <div className="relative h-full">
           {!userAccount.name && (
@@ -86,6 +85,7 @@ const Listing = ({
               </div>
             </div>
           )}
+          <SellerCard {...seller} />
           <h3 className="text-xl text-orange-100">Last bid</h3>
           <p className=" font-bold text-green-200 text-4xl py-[5px]">
             {bids && bids[bids.length - 1]?.amount}

@@ -66,7 +66,7 @@ const Searchbar = ({ Component }: { Component?: React.FC<ListingProps> }) => {
       {searchQuery.search &&
       filteredListings.length > 0 &&
       typeof Component === "undefined" ? (
-        <div className="absolute bg-gray-600 flex flex-col overflow-y-auto w-full px-2 h-[90vh] wrapAnywhere">
+        <div className="absolute bg-gray-600 flex flex-col top-[60px] overflow-y-auto w-full px-2 h-[90vh] wrapAnywhere">
           {filteredListings.map((listing, index) => (
             <Link href={`/listings/${listing.id}`} key={index + listing.title}>
               {listing.title}
