@@ -5,13 +5,17 @@ import changeAvatar from "@/app/utils/changeAvatar";
 import useForm from "@/app/utils/customHooks/useForm";
 import Input from "./Input";
 import { FaWindowClose } from "react-icons/fa";
+import changeAvatarFormEval from "@/app/utils/formValidation/changeAvatar";
 
 const AvatarChanger = ({ buttonClasses }: { buttonClasses?: string }) => {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const { userAccount, setUserAccount } = useContext(UserAccount);
-  const [values, handleChange, reset, setValues] = useForm({
-    avatar: userAccount.avatar,
-  });
+  const [values, handleChange, reset, setValues] = useForm(
+    {
+      avatar: userAccount.avatar,
+    },
+    changeAvatarFormEval
+  );
 
   return (
     <>
