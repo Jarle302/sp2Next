@@ -32,11 +32,6 @@ export default function Hero() {
             <div className="mt-8 flex gap-3">
               <Link
                 className="bg-red-200 drop-shadow-md rounded-[9px] p-[10px] font-semibold text-gray-600 box-border"
-                href="productList">
-                See all Listings
-              </Link>
-              <Link
-                className="border border-red-200 drop-shadow-md rounded-[9px] p-[10px] font-semibold text-gray-600 box-border"
                 href="/listings/create">
                 Add listing
               </Link>
