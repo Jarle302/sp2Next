@@ -6,12 +6,14 @@ import updateCredit from "@/app/utils/updateCredit";
 import { useContext } from "react";
 import { UserAccount } from "./ContextContainer";
 import { ReducerContext } from "./ListingReducerContext";
-import Link from "next/link";
-import NotAuser from "./NotAUser";
+import bidNowEval from "@/app/utils/formValidation/bidNowEval";
 
-const BidNow = ({ id }: { id: string }) => {
+const BidNow = ({ id }: { id: string; lastBid: number }) => {
   const { userAccount, setUserAccount } = useContext(UserAccount);
-  const [values, handleChange, reset, setValues] = useForm({ amount: "" });
+  const [values, handleChange, reset, setValues] = useForm(
+    { amount: "" },
+    bidNowEval
+  );
   const { state, dispatch } = useContext(ReducerContext);
   async function handleBid() {
     const data = await fetchFunction(

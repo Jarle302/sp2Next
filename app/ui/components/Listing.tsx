@@ -90,7 +90,7 @@ const Listing = ({
           <p className=" font-bold text-green-200 text-4xl py-[5px]">
             {bids && bids[bids.length - 1]?.amount}
           </p>
-          <BidNow id={id} />
+          <BidNow id={id} lastBid={bids ? bids[bids.length - 1]?.amount : 0} />
           <BidHistory bids={bids} />
         </div>
       </div>
