@@ -33,9 +33,12 @@ type ListingProps = {
 const Searchbar = ({ Component }: { Component?: React.FC<ListingProps> }) => {
   const { state, dispatch } = useContext(ReducerContext);
   console.log({ state });
-  const [searchQuery, handleChange, reset, setSearchQuery] = useForm({
-    search: "",
-  });
+  const [searchQuery, handleChange, reset, setSearchQuery] = useForm(
+    {
+      search: "",
+    },
+    () => ({})
+  );
 
   let filteredListings: ListingProps[] = [];
   if (Array.isArray(state) && state.length > 0 && searchQuery.search) {
