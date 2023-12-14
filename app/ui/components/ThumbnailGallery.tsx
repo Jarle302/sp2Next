@@ -9,7 +9,7 @@ const ThumbnailGallery = ({ media }: media) => {
   const [imageIndex, setImageIndex] = useState(0);
 
   return (
-    <div className="flex flex-col-reverse sm:flex-row gap-1 rounded-[3px] h-[max-content] w-[max-content] p-[7px] bg-[#3d4550]">
+    <div className="flex  gap-1 rounded-[3px] h-[max-content] w-[max-content] p-[7px] bg-[#3d4550]">
       <div className="flex gap-1 sm:flex-col">
         {media &&
           media.length > 1 &&

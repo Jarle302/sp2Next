@@ -47,7 +47,6 @@ const Searchbar = ({ Component }: { Component?: React.FC<ListingProps> }) => {
         .toLowerCase()
         .includes(searchQuery.search.toLowerCase());
     });
-    console.log(typeof Component);
   }
 
   return (

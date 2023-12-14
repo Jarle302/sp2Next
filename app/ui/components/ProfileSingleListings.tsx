@@ -58,7 +58,7 @@ const ProfileSingleListing = ({
       )}
       <div className="max-w-[300px]">
         <Link href={`/listings/${id}`}>
-          <h3 className="text-2xl font-bold">{title}</h3>
+          <h3 className="text-2xl font-bold break-words	">{title}</h3>
         </Link>
         <p>{description}</p>
         <p>{`Ends ${endsAt.split("T")[0]}`}</p>
