@@ -79,7 +79,7 @@ const Card = ({
                     suppressHydrationWarning={true}
                     className="font-bold text-green-200">
                     {" "}
-                    {bids?.[0]?.amount || 0}
+                    {Math.max(...(bids?.map((bid) => bid.amount) || [])) || 0}
                   </span>
                 }
               </p>

@@ -44,7 +44,7 @@ const Listing = ({
   const { userAccount } = useContext(UserAccount);
   console.log({ bids });
 
-  const lastBid = Math.max(...bids.map((bid) => bid.amount));
+  const lastBid = Math.max(...(bids?.map((bid) => bid.amount) || [])) || 0;
 
   return (
     <div className="flex-wrap  height-[100vh] my-[74px] gap-[40px] flex flex-col p-[20px] md:p-[40px] md:flex-row bg-gray-600 text-orange-100">
