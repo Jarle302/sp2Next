@@ -51,12 +51,12 @@ const Searchbar = ({ Component }: { Component?: React.FC<ListingProps> }) => {
   }
 
   return (
-    <section className="w-full relative flex bg-white justify-between">
-      <search className="m-auto">
+    <section className=" relative flex-wrap flex justify-between">
+      <search className="basis-full m-auto">
         <form action="">
-          <div className="flex text-gray-600 mx-2">
+          <div className="flex bg-white  text-gray-600 mx-2">
             <input
-              className="flex-basis-[100%] py-3 out outline-none"
+              className="flex-basis-[100%] py-3 outline-none"
               onChange={handleChange}
               type="text"
               name="search"
