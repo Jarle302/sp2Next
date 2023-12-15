@@ -42,6 +42,10 @@ const Listing = ({
   seller,
 }: ListingProps) => {
   const { userAccount } = useContext(UserAccount);
+  console.log({ bids });
+
+  const lastBid = Math.max(...bids.map((bid) => bid.amount));
+
   return (
     <div className="flex-wrap  height-[100vh] my-[74px] gap-[40px] flex flex-col p-[20px] md:p-[40px] md:flex-row bg-gray-600 text-orange-100">
       <h1 className="mb-[20px] text-3xl text-start md:text-4xl font-bold w-full">
@@ -88,9 +92,9 @@ const Listing = ({
           <SellerCard {...seller} />
           <h3 className="text-xl text-orange-100">Last bid</h3>
           <p className=" font-bold text-green-200 text-4xl py-[5px]">
-            {bids && bids[bids.length - 1]?.amount}
+            {lastBid}
           </p>
-          <BidNow id={id} lastBid={bids ? bids[bids.length - 1]?.amount : 0} />
+          <BidNow id={id} lastBid={lastBid} />
           <BidHistory bids={bids} />
         </div>
       </div>
