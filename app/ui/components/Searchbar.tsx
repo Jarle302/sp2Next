@@ -4,6 +4,7 @@ import React, { useContext, useState, useEffect, useMemo } from "react";
 import { ReducerContext } from "@/app/ui/components/ListingReducerContext";
 import useForm from "@/app/utils/customHooks/useForm";
 import Link from "next/link";
+import { IoMdCloseCircle } from "react-icons/io";
 
 type Bid = {
   id: string;
@@ -50,7 +51,7 @@ const Searchbar = ({ Component }: { Component?: React.FC<ListingProps> }) => {
   }
 
   return (
-    <section className="w-full relative flex">
+    <section className="w-full relative flex bg-white">
       <search className="m-auto">
         <form action="">
           <div className="flex text-gray-600">
@@ -61,7 +62,16 @@ const Searchbar = ({ Component }: { Component?: React.FC<ListingProps> }) => {
               name="search"
               id="search"
               placeholder="Search"
+              value={searchQuery.search}
             />
+            <button
+              className="text-[2rem]"
+              onClick={(e) => {
+                e.preventDefault();
+                reset();
+              }}>
+              <IoMdCloseCircle />
+            </button>
           </div>
         </form>
       </search>
