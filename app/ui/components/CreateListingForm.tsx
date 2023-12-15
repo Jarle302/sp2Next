@@ -61,7 +61,7 @@ const CreateListingForm = () => {
   return (
     <>
       {!userAccount.name && (
-        <div className="text-orange-100 fixed w-full h-full flex flex-col justify-center items-center text-2xl z-20 backdrop-blur-sm">
+        <div className="text-orange-100 fixed md:mt-[-74px] w-full h-full flex flex-col justify-center items-center text-2xl z-20 backdrop-blur-sm">
           <div className="p-4 bg-gray-600">
             <p>
               {" "}
@@ -83,7 +83,9 @@ const CreateListingForm = () => {
           </div>
         </div>
       )}
-      <div className="flex justify-evenly flex-col md:flex-row mt-[74px]">
+      <div className="flex justify-evenly flex-col flex-wrap md:flex-row md:mt-[0px] mt-[74px]">
+        <h1 className="text-6xl text-center mt-[74px] basis-full">Create Listing</h1>
+
         <form
           action=""
           className="shadow-md flex flex-col justify-evenly p-[20px] min-w-[300px]">

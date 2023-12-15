@@ -43,13 +43,13 @@ const Nav = () => {
             </li>
           ) : (
             <>
-              <li className="">
+              <li className="self-center">
                 <span className="flex items-center font-bold text-[1rem] text-green-200 flex">
                   {userAccount.credits}
                   <HiMiniCurrencyDollar />
                 </span>
               </li>
-              <li className="p-2 bg-orange-100 text-gray-600 font-bold text-2xl">
+              <li className="px-[13px] py-[2px] rounded-[8px] bg-orange-100 text-gray-600 font-bold text-[1rem]">
                 <Link href={`/profile/${userAccount.name}`}>
                   {userAccount.name}
                 </Link>
