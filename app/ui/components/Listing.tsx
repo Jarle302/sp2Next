@@ -62,7 +62,7 @@ const Listing = ({
         )}
       </div>
       <div className="flex p-[20px] flex-col justify-evenly bg-[#3d4550] relative">
-        <h2 className="text-2xl max-w-[700px]">{description}</h2>
+        <h2 className="text-2xl max-w-[300px] md:max-w-[700px]">{description}</h2>
 
         <BidCountdown endsAt={endsAt} />
         <div className="relative h-full">
