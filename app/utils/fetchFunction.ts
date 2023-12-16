@@ -39,10 +39,7 @@ const fetchFunction = async (url: string, method: string, body?: {}) => {
 
     return data;
   } catch (error: any) {
-    alert(
-      error
-        .map((err: { code: string; message: string }) => err.message)
-        .join("\n")
+    alert( Array.isArray(error)?error.map((err: { code: string; message: string }) => err.message).join("\n"):error.message
     );
   }
 };

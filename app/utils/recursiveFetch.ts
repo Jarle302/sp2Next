@@ -33,8 +33,7 @@ export default async function recursiveFetch(
     { cache: "no-store" }
   );
   const data = await response.json();
-  console.log(data, "logged");
-  console.log(data.length, "length");
+ 
   if (data.length < 100) {
     return [...data, ...payload];
   }

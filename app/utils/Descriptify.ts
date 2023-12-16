@@ -19,7 +19,7 @@ const Descriptify = async ({
     New Auction Listing Description:
     `,
     });
-
+console.log(data, "descriptify")
     return data;
   } catch (err) {
     console.log(err);

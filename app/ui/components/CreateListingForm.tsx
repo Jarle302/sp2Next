@@ -120,10 +120,10 @@ const CreateListingForm = () => {
               e.preventDefault();
               setIsLoading((prev) => !prev);
               try {
-                const data = await Descriptify(values);
+                const data = await Descriptify(values)
                 setValues((prev: CreateListFormProps) => ({
                   ...prev,
-                  description: data.message,
+                  description: data?.message,
                 }));
               } catch (error) {
                 console.log(error);
