@@ -20,7 +20,7 @@ const ImageComponent: FC<ImageComponentProps> = ({
     <img
       src={src}
       alt={alt}
-      className={` h-[${height}]  w-[${width}] object-cover rounded-2xl ${classNames}`}
+      className={` h-[${height}]  w-[${width}] object-cover  ${classNames}`}
     />
   );
 };

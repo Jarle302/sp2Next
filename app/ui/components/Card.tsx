@@ -43,10 +43,12 @@ const Card = ({
   if (media && media.length > 1) {
     imageProps = media.map((image) => ({
       src: image,
-      width: "183px",
+      width: "283px",
       height: "180px",
     }));
   }
+
+
   const timeRemaining = getTimeRemaining(endsAt);
   console.log(bids);
   return (
@@ -79,7 +81,7 @@ const Card = ({
                     suppressHydrationWarning={true}
                     className="font-bold text-green-200">
                     {" "}
-                    {Math.max(...(bids?.map((bid) => bid.amount) || [])) || 0}
+                    {bids.length>0? Math.max(...(bids?.map((bid) => bid.amount))) : 0}
                   </span>
                 }
               </p>

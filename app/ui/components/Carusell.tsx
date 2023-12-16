@@ -38,18 +38,18 @@ const Carousell = ({ Component, items }: CarousellProps) => {
   }, [items]);
 
   return (
-    <div className="relative">
-      <button
-        className="absolute top-[42%] right-[90%] p-5 rounded-r-[12px] px-1 py-4 bg-white "
+    < div className="relative">
+     { <button
+        className="absolute top-[42%]  p-5 rounded-r-[12px] px-1 py-4 bg-gray-600 text-orange-100 "
         onClick={() => {
           handleClick();
         }}>
         <MdArrowForwardIos className="rotate-180" />
-      </button>
+      </button>}
       {items && <Component {...items[count]} />}
 
       <button
-        className="absolute top-[42%] left-[90%] p-5  rounded-l-[12px] px-1 py-4  bg-white "
+        className="absolute top-[42%] right-[0] p-5  rounded-l-[12px] px-1 py-4  bg-gray-600 text-orange-100"
         onClick={() => {
           handleClick(false);
         }}>
