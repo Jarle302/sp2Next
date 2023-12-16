@@ -6,29 +6,23 @@ export default function validateCreateListing(
 
   switch (inputName) {
     case "title": {
-      if (value?.length < 1) {
+      if (value?.trim().length < 1) {
         errors[inputName] = "Title is required";
       }
       return errors;
     }
     case "description": {
-      if (value?.length < 1) {
-        errors[inputName] =
-          "Description is optional but reccomended, if you need help write a short description you can let the ai help you";
-      }
+      
       return errors;
     }
     case "tags": {
-      if (value?.length < 1) {
-        errors[inputName] =
-          "Tags are optional but it's reccomended to include atleast one for best results";
-      }
+      
       return errors;
     }
     case "media": {
-      if (value?.length < 1) {
+      if (!isValidUrl(value) ) {
         errors[inputName] =
-          "Media is optional, but is adviced to include a picture(validURL) for best results";
+          "All images needs to have a valid url";
       }
       return errors;
     }
@@ -40,3 +34,21 @@ export default function validateCreateListing(
     }
   }
 }
+
+
+
+
+function isValidUrl(url: string) {
+  const urlPattern = new RegExp(
+    "^(https?:\\/\\/)?" + // protocol
+      "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // domain name and extension
+      "((\\d{1,3}\\.){3}\\d{1,3}))" + // OR ip (v4) address
+      "(\\:\\d+)?" + // port
+      "(\\/[-a-z\\d%_.~+]*)*" + // path
+      "(\\?[;&amp;a-z\\d%_.~+=-]*)?" + // query string
+      "(\\#[-a-z\\d_]*)?$",
+    "i"
+  ); // fragment locator
+  return !!urlPattern.test(url);
+}
+

@@ -11,6 +11,8 @@ import Loader from "./Loader";
 import validateCreateListing from "@/app/utils/formValidation/createListing";
 import { UserAccount } from "./ContextContainer";
 import Link from "next/link";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 type CreateListFormProps = {
   [key: string]: string | string[] | undefined;
@@ -44,8 +46,14 @@ const CreateListingForm = () => {
     event.preventDefault();
     event.stopPropagation();
     const input = event.currentTarget.previousSibling
-      ?.lastChild as HTMLInputElement;
+    ?.lastChild as HTMLInputElement;
     let { name, value } = input;
+    const errors:undefined|{[key:string]:string|undefined} = validateCreateListing(name,value)
+    if(errors?.[name]){
+      toast(errors?.[name])
+      return
+
+    }
     setValues((prev: CreateListFormProps) => {
       const isThisAnArray = prev[name];
       let newElement;
@@ -55,9 +63,9 @@ const CreateListingForm = () => {
       return { ...prev, [name]: newElement };
     });
     input.value = "";
-  }
+  
   console.log(values);
-
+  }
   return (
     <>
       {!userAccount.name && (
@@ -179,13 +187,15 @@ const CreateListingForm = () => {
             className="py-[10px] bg-red-200 mt-[20px]"
             onClick={(e) => {
               e.preventDefault();
-              if (!formErrors.title && !formErrors.endsAt) {
+              if (!formErrors.title && !formErrors.endsAt && values.endsAt>=new Date().toISOString() ) {
                 fetchFunction(
                   "https://api.noroff.dev/api/v1/auction/listings",
                   "POST",
                   values
                 );
-              }
+                toast("Listing successfully created!")
+                reset();
+              }else toast("Please fill out all required fields. TILE,ENDS AT(needs to be in the future)")
             }}>
             Create Listing
           </button>
@@ -234,9 +244,9 @@ const CreateListingForm = () => {
           )}
         </section>
       </div>
-      )
+      <ToastContainer />
     </>
   );
 };
 
-export default CreateListingForm;
+export default CreateListingForm

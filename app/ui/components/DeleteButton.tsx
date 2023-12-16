@@ -3,6 +3,8 @@ import ListingReducerContext from "./ListingReducerContext";
 import { ReducerContext } from "./ListingReducerContext";
 import { useContext } from "react";
 import { MdDelete } from "react-icons/md";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 type state = {
   name: string;
@@ -36,10 +38,12 @@ export default function DeleteButton({
   const { state, dispatch } = useContext(ReducerContext);
   console.log(setState, "from delete button");
   return (
+    <>
     <button
       className={className}
       onClick={async () => {
         deleteListing(id);
+        toast("Listing successfully deleted!")
         dispatch({ type: "DELETE", payload: { id } });
         if (setState)
           setState((prev) => ({
@@ -47,8 +51,10 @@ export default function DeleteButton({
             listings: prev.listings.filter((listing) => listing.id !== id),
             _count: { listings: prev._count.listings - 1 },
           }));
-      }}>
+     }}>
       <MdDelete />
     </button>
+    <ToastContainer />
+    </>
   );
 }

@@ -28,6 +28,7 @@ export default async function recursiveFetch(
   payload: ListingProps[],
   limit = 100
 ) {
+  try{
   const response = await fetch(
     `https://api.noroff.dev/api/v1/auction/listings?offset=${offset}&limit=${limit}&_bids=true&_active=true&_seller=true`,
     { cache: "no-store" }
@@ -38,5 +39,7 @@ export default async function recursiveFetch(
     return [...data, ...payload];
   }
 
-  return recursiveFetch(offset + 100, [...payload, ...data]);
+  return recursiveFetch(offset + 100, [...payload, ...data]);}catch(err){
+    console.log(err)
+  }
 }

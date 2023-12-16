@@ -1,6 +1,8 @@
 "use client";
 import { useContext } from "react";
 import { UserAccount } from "./ContextContainer";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 const LogoutButton = ({ children }: { children: React.ReactNode }) => {
   const { userAccount, setUserAccount } = useContext(UserAccount);
@@ -15,6 +17,7 @@ const LogoutButton = ({ children }: { children: React.ReactNode }) => {
     });
     localStorage.removeItem("profile");
     localStorage.removeItem("token");
+    toast("Logged out successfully!")
   };
   return (
     <>
@@ -26,6 +29,7 @@ const LogoutButton = ({ children }: { children: React.ReactNode }) => {
           {children}
         </button>
       )}
+      <ToastContainer />
     </>
   );
 };

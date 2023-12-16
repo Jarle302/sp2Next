@@ -7,6 +7,8 @@ import { useContext } from "react";
 import { UserAccount } from "./ContextContainer";
 import { ReducerContext } from "./ListingReducerContext";
 import formEval from "@/app/utils/formValidation/bidNowEval";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 const BidNow = ({ id, lastBid }: { id: string; lastBid: number }) => {
   const { userAccount, setUserAccount } = useContext(UserAccount);
@@ -30,6 +32,7 @@ const BidNow = ({ id, lastBid }: { id: string; lastBid: number }) => {
       setUserAccount,
       userAccount
     );
+    toast(`Bid placed successfully!`)
   }}
   return (
     <div className="flex flex-col">
@@ -51,6 +54,7 @@ const BidNow = ({ id, lastBid }: { id: string; lastBid: number }) => {
         }}>
         Bid Now!
       </button>
+      <ToastContainer />
     </div>
   );
 };
