@@ -42,7 +42,6 @@ const Listing = ({
   seller,
 }: ListingProps) => {
   const { userAccount } = useContext(UserAccount);
-  console.log({ bids });
 
   const lastBid = bids.length>0? Math.max(...(bids?.map((bid) => bid.amount))) : 0
 

@@ -10,16 +10,7 @@ import validateLogin from "@/app/utils/formValidation/login";
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 
-type UserType = {
-  name: string;
-  email: string;
-  avatar: string;
-  credits: number;
-  wins: string[];
-  _count: {
-    listings: number;
-  };
-};
+
 
 const LoginForm = () => {
   const { userAccount, setUserAccount } = useContext(UserAccount);

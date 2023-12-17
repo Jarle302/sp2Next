@@ -2,7 +2,7 @@
 import { use } from "react";
 import Listing from "./Listing";
 import useLocalStorage from "@/app/utils/customHooks/useLocalStorage";
-
+import { Bid, Seller } from "@/app/utils/types";
 type CreateListFormProps = {
   title: string;
   description?: string;
@@ -11,18 +11,6 @@ type CreateListFormProps = {
   endsAt: string;
 };
 
-type Bid = {
-  id: string;
-  amount: number;
-  bidderName: string;
-  created: string;
-};
-
-type Seller = {
-  name: string;
-  email: string;
-  avatar: string;
-};
 
 const ListingPreview = ({
   title,

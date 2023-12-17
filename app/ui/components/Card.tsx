@@ -5,31 +5,11 @@ import Carusel from "./Carusell";
 import ImageComponent from "./ImageComponent";
 import Link from "next/link";
 import { HiMiniCurrencyDollar } from "react-icons/hi2";
+import { ListingProps as CardProps } from "@/app/utils/types";
 
-type Bid = {
-  id: string;
-  amount: number;
-  bidderName: string;
-  created: string;
-};
 
-type Seller = {
-  name: string;
-  email: string;
-  avatar: string;
-};
 
-type CardProps = {
-  title: string;
-  description?: string;
-  tags?: string[];
-  media?: string[];
-  endsAt: string;
-  id: string;
-  bids: Bid[];
-  seller: Seller;
-  _count: { bids: number };
-};
+
 const Card = ({
   title,
   _count,

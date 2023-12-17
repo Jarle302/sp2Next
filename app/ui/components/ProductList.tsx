@@ -1,36 +1,11 @@
 import Card from "./Card";
 import React, { Suspense } from "react";
+import {ListingProps as CardProps } from "@/app/utils/types";
 
 type ProductsProps = { url: string };
 const Products = async ({ url }: ProductsProps) => {
-  type Bid = {
-    id: string;
-    amount: number;
-    bidderName: string;
-    created: string;
-  };
-
-  type Seller = {
-    name: string;
-    email: string;
-    avatar: string;
-  };
-
-  type CardProps = {
-    title: string;
-    description?: string;
-    tags?: string[];
-    media?: string[];
-    endsAt: string;
-    id: string;
-    bids: Bid[];
-    seller: Seller;
-    _count: { bids: number };
-  };
   const response = await fetch(url, { cache: "no-store" });
   const products: CardProps[] = await response.json();
-  console.log("Products", products);
-  console.log("URL", url);
   return (
     <Suspense fallback={<div>TEST TEST</div>}>
       <section>

@@ -1,6 +1,6 @@
 import DeleteButton from "./DeleteButton";
 import ListingEditer from "./ListingEditer";
-
+import { state } from "@/app/utils/types";
 type Listing = {
   title: string;
   description: string;
@@ -9,26 +9,7 @@ type Listing = {
   id: string;
 };
 
-type state = {
-  name: string;
-  email: string;
-  avatar: string;
-  credits: number;
-  wins: string[];
-  listings: {
-    id: string;
-    title: string;
-    description: string;
-    media: string[];
-    tags: string[];
-    created: string;
-    updated: string;
-    endsAt: string;
-  }[];
-  _count: {
-    listings: number;
-  };
-};
+
 
 type ListingEditerProps = Listing & {
   setState: React.Dispatch<React.SetStateAction<state>>;

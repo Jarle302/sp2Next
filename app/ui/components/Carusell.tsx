@@ -12,19 +12,15 @@ const Carousell = ({ Component, items }: CarousellProps) => {
     if (!decrement) {
       if (count === items.length - 1) {
         setCount(0);
-        console.log(count);
       } else {
         setCount((prev) => prev + 1);
-        console.log(count);
       }
       return;
     } else {
       if (count === 0) {
         setCount(items.length - 1);
-        console.log(count);
       } else {
         setCount((prev) => prev - 1);
-        console.log(count);
       }
     }
   }

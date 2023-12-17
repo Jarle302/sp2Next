@@ -195,7 +195,7 @@ const CreateListingForm = () => {
                 );
                 toast.success("Listing successfully created!")
                 reset();
-              }else toast.error("Please fill out all required fields. TILE,ENDS AT(needs to be in the future)")
+              }else toast.error("Please fix any errors and include required inputs (Title, EndsAt)")
             }}>
             Create Listing
           </button>

@@ -1,27 +1,6 @@
 import EditDelete from "./EditDelete";
 import Link from "next/link";
-
-type state = {
-  name: string;
-  email: string;
-  avatar: string;
-  credits: number;
-  wins: string[];
-  listings: {
-    id: string;
-    title: string;
-    description: string;
-    media: string[];
-    tags: string[];
-    created: string;
-    updated: string;
-    endsAt: string;
-  }[];
-  _count: {
-    listings: number;
-  };
-};
-
+import { state } from "@/app/utils/types";
 type listing = {
   id: string;
   title: string;
@@ -50,7 +29,6 @@ const ProfileSingleListing = ({
   tags,
   setState,
 }: listingProps) => {
-  console.log(isCurrentUser);
   return (
     <div className="flex p-[10px] justify-between">
       {isCurrentUser && (

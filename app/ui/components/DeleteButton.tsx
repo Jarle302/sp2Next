@@ -5,27 +5,9 @@ import { useContext } from "react";
 import { MdDelete } from "react-icons/md";
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+import { state } from "@/app/utils/types";  
 
-type state = {
-  name: string;
-  email: string;
-  avatar: string;
-  credits: number;
-  wins: string[];
-  listings: {
-    id: string;
-    title: string;
-    description: string;
-    media: string[];
-    tags: string[];
-    created: string;
-    updated: string;
-    endsAt: string;
-  }[];
-  _count: {
-    listings: number;
-  };
-};
+
 export default function DeleteButton({
   id,
   className,
@@ -36,7 +18,6 @@ export default function DeleteButton({
   setState?: React.Dispatch<React.SetStateAction<state>>;
 }) {
   const { state, dispatch } = useContext(ReducerContext);
-  console.log(setState, "from delete button");
   return (
     <>
     <button

@@ -1,30 +1,10 @@
 import Card from "./Card";
 import React from "react";
+import { ListingProps } from "@/app/utils/types";
 
-type Bid = {
-  id: string;
-  amount: number;
-  bidderName: string;
-  created: string;
-};
 
-type Seller = {
-  name: string;
-  email: string;
-  avatar: string;
-};
 
-type ListingProps = {
-  title: string;
-  description?: string;
-  tags?: string[];
-  media?: string[];
-  endsAt: string;
-  id: string;
-  bids: Bid[];
-  seller: Seller;
-  _count: { bids: number };
-};
+
 
 const CardList = ({ data }: { data: ListingProps[] }) => {
   return (

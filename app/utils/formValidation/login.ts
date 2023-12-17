@@ -59,9 +59,7 @@ export default function validateLoginRegister(
 
     default:
       {
-        console.log("defaults");
       }
-      console.log(errors);
       return errors;
   }
 }

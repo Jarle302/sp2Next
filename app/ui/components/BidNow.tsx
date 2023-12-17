@@ -23,7 +23,7 @@ const BidNow = ({ id, lastBid }: { id: string; lastBid: number }) => {
       `https://api.noroff.dev/api/v1/auction/listings/${id}/bids?_bids=true`,
       "POST",
       { amount: parseFloat(values.amount) }
-    ); console.log(data)
+    );
     if(data.title){
     dispatch({ type: "UPDATE", payload: data });
     reset();

@@ -12,7 +12,9 @@ export default function validateCreateListing(
       return errors;
     }
     case "description": {
-      
+      if (value.length >280 ) {
+        errors[inputName] = "Description can't be longer than 280 characters";
+      }
       return errors;
     }
     case "tags": {

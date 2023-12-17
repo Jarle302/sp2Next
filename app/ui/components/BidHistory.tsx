@@ -1,9 +1,4 @@
-type Bid = {
-    id: string;
-    amount: number;
-    bidderName: string;
-    created: string;
-};
+import { Bid } from "@/app/utils/types"
 
 
 const BidHistory = ({ bids }: { bids: Bid[] }) => {

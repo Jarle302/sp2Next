@@ -5,35 +5,10 @@ import { ReducerContext } from "@/app/ui/components/ListingReducerContext";
 import useForm from "@/app/utils/customHooks/useForm";
 import Link from "next/link";
 import { IoMdCloseCircle } from "react-icons/io";
-
-type Bid = {
-  id: string;
-  amount: number;
-  bidderName: string;
-  created: string;
-};
-
-type Seller = {
-  name: string;
-  email: string;
-  avatar: string;
-};
-
-type ListingProps = {
-  title: string;
-  description?: string;
-  tags?: string[];
-  media?: string[];
-  endsAt: string;
-  id: string;
-  bids: Bid[];
-  seller: Seller;
-  _count: { bids: number };
-};
+import { ListingProps } from "@/app/utils/types";
 
 const Searchbar = ({ Component }: { Component?: React.FC<ListingProps> }) => {
   const { state, dispatch } = useContext(ReducerContext);
-  console.log({ state });
   const [searchQuery, handleChange, reset, setSearchQuery] = useForm(
     {
       search: "",

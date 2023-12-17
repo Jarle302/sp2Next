@@ -1,31 +1,8 @@
 "use client";
 import listingReducer from "@/app/utils/listingReducer";
 import { createContext, useReducer } from "react";
+import { Bid, ListingProps, Seller } from "@/app/utils/types";
 
-type Bid = {
-  id: string;
-  amount: number;
-  bidderName: string;
-  created: string;
-};
-
-type Seller = {
-  name: string;
-  email: string;
-  avatar: string;
-};
-
-type ListingProps = {
-  title: string;
-  description?: string;
-  tags?: string[];
-  media?: string[];
-  endsAt: string;
-  id: string;
-  bids: Bid[];
-  seller: Seller;
-  _count: { bids: number };
-};
 
 type Action =
   | { type: "ADD"; payload: ListingProps }
