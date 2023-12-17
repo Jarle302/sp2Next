@@ -45,7 +45,7 @@ const RegisterForm = () => {
         <Input
           handleChange={handleChange}
           value={values.name}
-          type="name"
+          type="text"
           name="name"
           id="name"
           label="Name"
