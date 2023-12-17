@@ -3,6 +3,8 @@ import ProfilePage from "@/app/ui/components/ProfilePage";
 import fetchFunction from "@/app/utils/fetchFunction";
 import { useEffect, useState } from "react";
 
+
+
 type ParamType = { params: { profileName: string } };
 
 export default function ProfileId({ params }: ParamType) {

@@ -26,7 +26,7 @@ const Searchbar = ({ Component,useCase }: { Component?: React.FC<ListingProps>,u
   }
 
   return (
-    <section className=" relative flex-wrap flex justify-between">
+    <div className=" relative flex-wrap flex justify-between">
       <search className="basis-full m-auto">
         <form action="">
           <div className="flex bg-white  text-gray-600 mx-2 relative">
@@ -69,7 +69,7 @@ const Searchbar = ({ Component,useCase }: { Component?: React.FC<ListingProps>,u
             ))}
         </div>
       )}
-    </section>
+    </div>
   );
 };
 

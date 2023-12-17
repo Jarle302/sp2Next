@@ -1,4 +1,18 @@
+
+
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+
+
+    title: "About | Collection Chest",
+    description: "Collection Chest - Learn more about our auction house. Discover our history, values, and how we're committed to helping you build your unique collection. Get to know us better today.",};
+
+
+
 export default function About() {
+
+
+    
     return (
         <main className="max-w-[1300px] p-[40px] flex">
             <div className="w-3/5 text-gray-600 flex flex-col gap-8 m-[40px]">

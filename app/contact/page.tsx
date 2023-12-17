@@ -1,5 +1,11 @@
-"use client"
 import Button from "../ui/components/Button";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+
+
+    title: "Contact us | Collection Chest",
+    description: "Collection Chest - Contact us for any queries or support. We're here to help you with your collection journey. Reach out to us today.",}
 
 export default function Contact() {
 
@@ -8,22 +14,7 @@ export default function Contact() {
             <div className="w-full  mt-[40px] p-5 text-orange-100 bg-gray-600 flex flex-col gap-8">
                 <h1 className="custom-responsive-font">Contact</h1>
                 <div className="flex flex-wrap gap-[30px]">
-                    <form className="flex flex-col w-[247px] h-[286px] custom-gray p-2">
-                        <div className=" flex flex-col">
-                            <label htmlFor="email">Email</label>
-                            <input type="email" id="email" name="email" />
-                        </div>
-                        <div className=" flex flex-col">
-                            <label htmlFor="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" />
-                        </div>
-                        <div className=" flex flex-col">
-                            <label htmlFor="message">message</label>
-                            <textarea name="message" id="message" cols={30} rows={5}></textarea>
-                            <Button click={() => { console.log("test") }}>Send</Button>
-                        </div>
-
-                    </form>
+                  
 
                     <div className="w-[247px] h-[286px] custom-gray p-2">
                         <p><strong>Address:</strong></p>
