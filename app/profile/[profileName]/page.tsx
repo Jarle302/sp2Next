@@ -41,5 +41,5 @@ export default function ProfileId({ params }: ParamType) {
       setData(data);
     })();
   }, []);
-  return <ProfilePage {...data} setState={setData} />;
+  return  <ProfilePage {...data} setState={setData} />;
 }

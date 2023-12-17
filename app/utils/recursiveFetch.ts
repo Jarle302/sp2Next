@@ -1,27 +1,4 @@
-type Bid = {
-  id: string;
-  amount: number;
-  bidderName: string;
-  created: string;
-};
-
-type Seller = {
-  name: string;
-  email: string;
-  avatar: string;
-};
-
-type ListingProps = {
-  title: string;
-  description?: string;
-  tags?: string[];
-  media?: string[];
-  endsAt: string;
-  id: string;
-  bids: Bid[];
-  seller: Seller;
-  _count: { bids: number };
-};
+import { ListingProps } from "./types/types";
 
 export default async function recursiveFetch(
   offset: number,
@@ -36,11 +13,13 @@ export default async function recursiveFetch(
   const data = await response.json();
 
   if(!data){
-    
+
     return payload
   }
- 
-  if (data.length < 100) {
+ const allListings = [...payload, ...data]
+
+ //Need to limit the amount of data that gets fetched to prevent rate limiting.
+  if (data.length < 100 || allListings.length >= 800) {
     return [...data, ...payload];
   }
 
