@@ -74,12 +74,10 @@ const SideNav = () => {
               </Link>
             </li>
           </ul>
-          <li>
           <LogoutButton>
             <MdOutlineLogout />
             Logout
           </LogoutButton>
-          </li>
         </aside>
       )}
     </>

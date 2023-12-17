@@ -58,12 +58,13 @@ const Nav = () => {
             </>
           )}
           {navState.isSmallScreen && (
-            <button
+           <li> <button
               onClick={() =>
                 setNavState((prev) => ({ ...prev, isVisible: !prev.isVisible }))
               }>
               <GiHamburgerMenu />
             </button>
+            </li>
           )}
         </ul>
       </nav>
