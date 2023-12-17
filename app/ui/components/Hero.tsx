@@ -10,13 +10,13 @@ export default function Hero() {
   const { state } = useContext(ReducerContext);
   const items = state.slice(0, 10);
   return (
-    <section className="flex gap-10 justify-between flex-wrap">
-      <div className="min-w-[300px] flex-1  flex gap-3 flex-col">
+    <section className="flex gap-10 justify-center flex-wrap w-full">
+
         <h1
-          className={`${playfair.className} mt-[74px] font-bold text-gray-600 fs-3 custom-responsive-font border-b-2 border-red-200 rounded-2xl max-w-max`}>
+          className={`${playfair.className} mt-[74px] font-bold text-gray-600 text-center fs-3 custom-responsive-font border-b-2 border-red-200 rounded-2xl max-w-max basis-full`}>
           Collective chest
         </h1>
-        <div className="flex justify-between mt-8 items-center flex-wrap">
+        <div className="flex justify-evenly  mt-8 items-center flex-wrap basis-full">
           <div className="flex flex-col gap-8">
             <h2
               className={`${lato.className} self-start font-bold text-gray-600 text-3xl`}>
@@ -39,7 +39,8 @@ export default function Hero() {
           </div>
           {items.length > 0 && <Carousel Component={Slide} items={items} />}
         </div>
-      </div>
+      
+      
     </section>
   );
 }
