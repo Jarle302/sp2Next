@@ -43,7 +43,7 @@ const ProfileSingleListing = ({
       </div>
       <img
         className="w-[215px] h-[215px] object-cover"
-        src={media[0]}
+        src={media[0]? media[0] : "/ListingPlaceholder.png"}
         alt="listing image"
       />
     </div>
