@@ -1,5 +1,5 @@
 import Card from "./Card";
-import { ListingProps as CardProps } from "@/app/utils/types";
+import { ListingProps as CardProps } from "@/app/utils/types/types";
 
 
 

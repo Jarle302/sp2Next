@@ -8,7 +8,7 @@ import validateCreateListing from "@/app/utils/formValidation/createListing";
 import fetchFunction from "@/app/utils/fetchFunction";
 import { listingId } from "@/app/utils/api/endpoints";
 import { FaEdit } from "react-icons/fa";
-import { state } from "@/app/utils/types";
+import { state } from "@/app/utils/types/types";
 
 type Listing = {
   title: string;

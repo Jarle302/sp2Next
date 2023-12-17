@@ -1,6 +1,6 @@
 import DeleteButton from "./DeleteButton";
 import ListingEditer from "./ListingEditer";
-import { state } from "@/app/utils/types";
+import { state } from "@/app/utils/types/types";
 type Listing = {
   title: string;
   description: string;

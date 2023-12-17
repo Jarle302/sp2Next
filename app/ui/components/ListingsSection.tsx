@@ -8,31 +8,7 @@ import Searchbar from "@/app/ui/components/Searchbar";
 import Card from "./Card";
 import { useState } from "react";
 import PaginationButtonGenerator from "./PaginationButtonGenerator";
-type Bid = {
-  id: string;
-  amount: number;
-  bidderName: string;
-  created: string;
-};
-
-type Seller = {
-  name: string;
-  email: string;
-  avatar: string;
-};
-
-type ListingProps = {
-  title: string;
-  description?: string;
-  tags?: string[];
-  media?: string[];
-  endsAt: string;
-  id: string;
-  bids: Bid[];
-  seller: Seller;
-  _count: { bids: number };
-};
-
+import { ListingProps } from "@/app/utils/types/types";
 type Action = {
   payload: ListingProps;
   type: string;

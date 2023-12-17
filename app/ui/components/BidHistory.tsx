@@ -1,4 +1,4 @@
-import { Bid } from "@/app/utils/types"
+import { Bid } from "@/app/utils/types/types"
 
 
 const BidHistory = ({ bids }: { bids: Bid[] }) => {

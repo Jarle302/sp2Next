@@ -5,7 +5,7 @@ import Carusel from "./Carusell";
 import ImageComponent from "./ImageComponent";
 import Link from "next/link";
 import { HiMiniCurrencyDollar } from "react-icons/hi2";
-import { ListingProps as CardProps } from "@/app/utils/types";
+import { ListingProps as CardProps } from "@/app/utils/types/types";
 
 
 

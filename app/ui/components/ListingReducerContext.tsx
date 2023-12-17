@@ -1,7 +1,7 @@
 "use client";
 import listingReducer from "@/app/utils/listingReducer";
 import { createContext, useReducer } from "react";
-import { Bid, ListingProps, Seller } from "@/app/utils/types";
+import { Bid, ListingProps, Seller } from "@/app/utils/types/types";
 
 
 type Action =

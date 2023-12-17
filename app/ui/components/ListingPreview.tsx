@@ -2,7 +2,7 @@
 import { use } from "react";
 import Listing from "./Listing";
 import useLocalStorage from "@/app/utils/customHooks/useLocalStorage";
-import { Bid, Seller } from "@/app/utils/types";
+import { Bid, Seller } from "@/app/utils/types/types";
 type CreateListFormProps = {
   title: string;
   description?: string;

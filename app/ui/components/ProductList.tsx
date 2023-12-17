@@ -1,6 +1,6 @@
 import Card from "./Card";
 import React, { Suspense } from "react";
-import {ListingProps as CardProps } from "@/app/utils/types";
+import {ListingProps as CardProps } from "@/app/utils/types/types";
 
 type ProductsProps = { url: string };
 const Products = async ({ url }: ProductsProps) => {

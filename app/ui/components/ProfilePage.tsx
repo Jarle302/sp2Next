@@ -6,7 +6,7 @@ import { UserAccount } from "@/app/ui/components/ContextContainer";
 import { useContext } from "react";
 import AvatarChanger from "@/app/ui/components/AvatarChanger";
 import UseAssertUser from "@/app/utils/customHooks/useAssertUser";
-import { state } from "@/app/utils/types";
+import { state } from "@/app/utils/types/types";
 
 type ProfilePageProps = state & {
   setState: React.Dispatch<React.SetStateAction<state>>;

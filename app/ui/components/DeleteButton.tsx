@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { MdDelete } from "react-icons/md";
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
-import { state } from "@/app/utils/types";  
+import { state } from "@/app/utils/types/types";  
 
 
 export default function DeleteButton({

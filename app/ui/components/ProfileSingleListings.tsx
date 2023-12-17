@@ -1,6 +1,6 @@
 import EditDelete from "./EditDelete";
 import Link from "next/link";
-import { state } from "@/app/utils/types";
+import { state } from "@/app/utils/types/types";
 type listing = {
   id: string;
   title: string;

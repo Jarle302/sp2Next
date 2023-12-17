@@ -5,7 +5,7 @@ import { ReducerContext } from "@/app/ui/components/ListingReducerContext";
 import useForm from "@/app/utils/customHooks/useForm";
 import Link from "next/link";
 import { IoMdCloseCircle } from "react-icons/io";
-import { ListingProps } from "@/app/utils/types";
+import { ListingProps } from "@/app/utils/types/types";
 
 const Searchbar = ({ Component }: { Component?: React.FC<ListingProps> }) => {
   const { state, dispatch } = useContext(ReducerContext);
