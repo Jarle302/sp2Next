@@ -50,26 +50,29 @@ Follow these steps to set up and run the Collection Chest website on your local 
    git clone  https://github.com/Jarle302/sp2Next/
    cd sp2Next
    npm i
+   ```
   
 
 
 
-2 Set Up Environment Variables:
-```bash
+2. **Set Up Environment Variables:**
 Create a .env file in the root directory and configure your environment variables, including the Noroff API key.
 
+```bash
 env
-API=you open ai api key
+API=you open AI API key
 NEXT_PUBLIC_DESCRIPTIFY = url to ai route, as a local env it should be http://localhost:3000/ai, replace the localhost part in production. 
+```
 
 
-3. Start the developmen server
+3. **Start the development server**
 
 ```bash
 npm run dev
+```
 The application should now be running locally on http://localhost:3000.
 
-4. Access the Website:
+4. **Access the Website:**
 
 Open your web browser and navigate to http://localhost:3000 to use the Collection Chest website.
 
