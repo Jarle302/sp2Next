@@ -34,12 +34,18 @@ export default async function recursiveFetch(
     { cache: "no-store" }
   );
   const data = await response.json();
+
+  if(!data){
+    
+    return payload
+  }
  
   if (data.length < 100) {
     return [...data, ...payload];
   }
 
-  return recursiveFetch(offset + 100, [...payload, ...data]);}catch(err){
+  return recursiveFetch(offset + 100, [...payload, ...data]);}
+  catch(err){
     console.log(err)
   }
 }
