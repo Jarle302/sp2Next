@@ -7,6 +7,8 @@ import { useContext } from "react";
 import { UserAccount } from "./ContextContainer";
 import { useRouter } from "next/navigation";
 import validateLogin from "@/app/utils/formValidation/login";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 type UserType = {
   name: string;
@@ -28,7 +30,9 @@ const LoginForm = () => {
     e.preventDefault();
     const data = await login(values, setUserAccount);
     reset();
-    data.name ? router.push("/") : null;
+    if(data.name){
+      toast.success(`Logged in successfully!`)
+     router.push("/")}
   }
 
   const [values, handleChange, reset, setFormState, formErrors] = useForm(
@@ -67,6 +71,7 @@ const LoginForm = () => {
           Login
         </button>
       </form>
+      <ToastContainer />
     </div>
   );
 };

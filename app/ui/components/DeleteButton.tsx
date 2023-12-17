@@ -43,7 +43,7 @@ export default function DeleteButton({
       className={className}
       onClick={async () => {
         deleteListing(id);
-        toast("Listing successfully deleted!")
+        toast.success("Listing successfully deleted!")
         dispatch({ type: "DELETE", payload: { id } });
         if (setState)
           setState((prev) => ({

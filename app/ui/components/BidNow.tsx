@@ -32,7 +32,7 @@ const BidNow = ({ id, lastBid }: { id: string; lastBid: number }) => {
       setUserAccount,
       userAccount
     );
-    toast(`Bid placed successfully!`)
+    toast.success(`Bid placed successfully!`)
   }}
   return (
     <div className="flex flex-col">

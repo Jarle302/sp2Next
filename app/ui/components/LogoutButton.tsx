@@ -17,7 +17,7 @@ const LogoutButton = ({ children }: { children: React.ReactNode }) => {
     });
     localStorage.removeItem("profile");
     localStorage.removeItem("token");
-    toast("Logged out successfully!")
+    toast.success("Logged out successfully!")
   };
   return (
     <>
