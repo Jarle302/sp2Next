@@ -11,6 +11,7 @@ import { RiAuctionFill } from "react-icons/ri";
 import { MdOutlineLogout } from "react-icons/md";
 import { BsFillPeopleFill } from "react-icons/bs";
 
+
 const SideNav = () => {
   const { navState, setNavState } = useContext(NavContext);
   const pathName = usePathname();
@@ -30,8 +31,8 @@ const SideNav = () => {
             <li
               className={
                 pathName === "/"
-                  ? "underline decoration-8 decoration-red-200	  w-[200px]  font-bold text-xl"
-                  : " w-[200px]  font-bold text-xl"
+                  ? "underline decoration-8 decoration-red-200	hover:text-red-200  w-[200px]  font-bold text-xl"
+                  : " w-[200px]  font-bold text-xl hover:text-red-200"
               }>
               {" "}
               <Link onClick={closeNav} className="flex gap-2" href="/">
@@ -42,8 +43,8 @@ const SideNav = () => {
             <li
               className={
                 pathName === "/listings/create"
-                  ? "underline decoration-8 decoration-red-200	  w-[200px]  font-bold text-xl"
-                  : " w-[200px]  font-bold text-xl"
+                  ? "underline decoration-8 decoration-red-200	 hover:text-red-200  w-[200px]  font-bold text-xl"
+                  : " w-[200px]  font-bold text-xl hover:text-red-200"
               }>
               <Link
                 onClick={closeNav}
@@ -55,8 +56,8 @@ const SideNav = () => {
             <li
               className={
                 pathName === "/about"
-                  ? "underline decoration-8 decoration-red-200	  w-[200px]  font-bold text-xl"
-                  : " w-[200px]  font-bold text-xl"
+                  ? "underline decoration-8 decoration-red-200	  hover:text-red-200 w-[200px]  font-bold text-xl"
+                  : " w-[200px]  font-bold text-xl hover:text-red-200"
               }>
               <Link onClick={closeNav} className="flex gap-2" href="/about">
                 <BsFillPeopleFill className="text-[2rem]" /> About
@@ -65,8 +66,8 @@ const SideNav = () => {
             <li
               className={
                 pathName === "/contact"
-                  ? "underline decoration-8 decoration-red-200	  w-[200px]  font-bold text-xl"
-                  : " w-[200px]  font-bold text-xl"
+                  ? "underline decoration-8 decoration-red-200	 hover:text-red-200  w-[200px]  font-bold text-xl"
+                  : " w-[200px]  font-bold text-xl hover:text-red-200"
               }>
               <Link onClick={closeNav} className="flex gap-2" href="/contact">
                 <MdEmail className="text-[2rem]" /> Contact

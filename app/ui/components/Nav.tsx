@@ -6,6 +6,7 @@ import { UserAccount } from "./ContextContainer";
 import { GiChest, GiHamburgerMenu } from "react-icons/gi";
 import { HiMiniCurrencyDollar } from "react-icons/hi2";
 
+
 import { NavContext } from "./NavProvider";
 
 const Nav = () => {
@@ -30,13 +31,13 @@ const Nav = () => {
           {!isLoggedIn ? (
             <li>
               <Link
-                className={" w-[200px]  font-bold text-xl"}
+                className={" w-[200px]  font-bold text-xl hover:bg-red-200"}
                 href="/profile/auth/login">
                 Login
               </Link>
               /
               <Link
-                className={" w-[200px]  font-bold text-xl"}
+                className={" w-[200px]  font-bold text-xl hover:bg-red-200"}
                 href="/profile/auth/register">
                 Register
               </Link>
@@ -49,7 +50,7 @@ const Nav = () => {
                   <HiMiniCurrencyDollar />
                 </span>
               </li>
-              <li className="px-[13px] py-[2px] rounded-[8px] bg-orange-100 text-gray-600 font-bold text-[1rem]">
+              <li className="px-[13px] py-[2px] rounded-[8px] bg-orange-100 text-gray-600 font-bold text-[1rem] hover:bg-red-200">
                 <Link href={`/profile/${userAccount.name}`}>
                   {userAccount.name}
                 </Link>

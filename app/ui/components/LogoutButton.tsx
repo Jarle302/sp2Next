@@ -25,7 +25,7 @@ const LogoutButton = ({ children }: { children: React.ReactNode }) => {
         <button
           type="button"
           onClick={handleClick}
-          className="bg-orange-100 text-gray-600 py-2 px-6">
+          className="bg-orange-100 text-gray-600 py-2 px-6 hover:bg-red-200">
           {children}
         </button>
       )}

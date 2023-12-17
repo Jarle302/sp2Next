@@ -1,4 +1,5 @@
-function isValidUrl(url: string) {
+export function isValidUrl(url: string) {
+  if (url.length < 1) return false;
   const urlPattern = new RegExp(
     "^(https?:\\/\\/)?" + // protocol
       "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // domain name and extension
