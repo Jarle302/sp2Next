@@ -44,9 +44,7 @@ export default function About() {
 
                     <h3 className="text-xl">Collection Chest: Where Rarity Meets Responsibility</h3>
                 </section>  </div>
-            <div className=" w-2/5 bg-gray-600 text-orange-100  m-[40px]">
-
-            </div>
+           
         </main >
     )
 }
