@@ -25,7 +25,7 @@ const AvatarChanger = ({ buttonClasses }: { buttonClasses?: string }) => {
       <dialog
         className="w-[280px] p-[20px] bg-orange-100 rounded-lg"
         ref={dialogRef}>
-        <button onClick={() => dialogRef.current?.close()}>
+        <button aria-label="close modal" onClick={() => dialogRef.current?.close()}>
           <FaWindowClose />
         </button>
         <form className="flex flex-col">

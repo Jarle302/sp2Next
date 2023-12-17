@@ -36,6 +36,7 @@ const Carousell = ({ Component, items }: CarousellProps) => {
   return (
     < div className="relative">
      { <button
+     aria-label="Previous slide"
         className="absolute top-[42%]  p-5 rounded-r-[12px] px-1 py-4 bg-gray-600 text-orange-100 "
         onClick={() => {
           handleClick();
@@ -45,6 +46,7 @@ const Carousell = ({ Component, items }: CarousellProps) => {
       {items && <Component {...items[count]} />}
 
       <button
+       aria-label="Next slide"
         className="absolute top-[42%] right-[0] p-5  rounded-l-[12px] px-1 py-4  bg-gray-600 text-orange-100"
         onClick={() => {
           handleClick(false);

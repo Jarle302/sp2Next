@@ -26,7 +26,7 @@ const SideNav = () => {
     <>
       {navState.isVisible && (
         <aside className="gap-[40px] w-[267px]  z-40 top-[74px] absolute h-full md:static flex md:w-full md:w-[245px] bg-gray-600 text-orange-100 flex-col pt-[40px] items-center ">
-          <Searchbar />
+          <Searchbar useCase="sideNav"/>
           <ul className="flex flex-col gap-[15px] ">
             <li
               className={

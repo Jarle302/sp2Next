@@ -56,7 +56,7 @@ const Listing = ({
         ) : (
           <img
             className="md:w-[360px] md:h-[360px] w-[300px] h-[300px]"
-            src="/ListingPlaceholder.png"
+            src="/ListingPlaceholder.png" alt="placeholder image"
           />
         )}
       </div>

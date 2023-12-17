@@ -41,37 +41,39 @@ export default function ListingsSection() {
 
   const [sortState, sortDispatch] = useReducer(sortReducer, state);
 
+  const buttonStyle="text-orange-100 bg-gray-600 p-3"
+
   const handleClick = (page: number) => {
     setCount((page - 1) * 10);
   };
   return (
     <section className="relative bg-orange-100 text-gray-600">
-      <h2 className="text-3xl font-bold">Listings</h2>
-      <div className="flex text-orange-100 mb-3">
-        <h3>Sort by</h3>
+      <h2 className="text-3xl md:text-4xl font-bold">Listings</h2>
+      <div className="flex text-orange-100 mb-3 flex-wrap">
+        <h3 className="text-gray-600 text-2xl md:text-3xl basis-full my-2">Sort by</h3>
         <button
-          className="text-orange-100 bg-gray-600 p-3"
+          className={buttonStyle}
           onClick={() => {
             sortDispatch({ type: "SORT_BY_PRICE" });
           }}>
           Price
         </button>
         <button
-          className="text-orange-100 bg-gray-600 p-3"
+          className={buttonStyle}
           onClick={() => {
             sortDispatch({ type: "SORT_BY_TITLE" });
           }}>
           Title
         </button>
         <button
-          className="text-orange-100 bg-gray-600 p-3"
+          className={buttonStyle}
           onClick={() => {
             sortDispatch({ type: "SORT_BY_DATE" });
           }}>
           Date
         </button>
         <button
-          className="text-orange-100 bg-gray-600 p-3"
+          className={buttonStyle}
           onClick={() => {
             sortDispatch({ type: "REVERSE" });
           }}>
@@ -79,7 +81,7 @@ export default function ListingsSection() {
         </button>
       </div>
       <div className="flex flex-col md:flex-row">
-        <Searchbar Component={Card} />
+        <Searchbar Component={Card} useCase="mainSearch" />
       </div>
       <CardList data={sortState.slice(0 + count, initalPagination + count)} />
 

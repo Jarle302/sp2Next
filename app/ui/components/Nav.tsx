@@ -20,7 +20,7 @@ const Nav = () => {
   return (
     <header className=" fixed md:static w-full h-[74px] bg-gray-600 z-20 text-orange-100">
       <nav className="flex justify-between items-center px-8 py-2  md:static">
-        <Link href="/">
+        <Link href="/" aria-label="Home">
           {" "}
           <span className="text-orange-100 text-[4rem]">
             <GiChest />

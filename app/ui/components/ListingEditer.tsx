@@ -64,14 +64,14 @@ const ListingEditer = ({
       <dialog
         className="w-[280px] p-[20px] bg-orange-100 rounded-lg"
         ref={editRef}>
-        <button onClick={() => editRef.current?.close()}>
+        <button aria-label="close modal" onClick={() => editRef.current?.close()}>
           <FaWindowClose />
         </button>
         <form onSubmit={handleSubmit} className="flex flex-col">
           <Input
             type="text"
             name="title"
-            id="title"
+            id={`title${id}`}
             value={values.title}
             label="title"
             handleChange={handleChange}
@@ -79,7 +79,7 @@ const ListingEditer = ({
           <Input
             type="text"
             name="description"
-            id="description"
+            id={`description${id}`}
             value={values.description}
             label="description"
             handleChange={handleChange}
@@ -88,7 +88,7 @@ const ListingEditer = ({
           <Input
             type="text"
             name="tags"
-            id="tags"
+            id={`tags${id}`}
             value={
               Array.isArray(values.tags) ? values.tags?.join(",") : values.tags
             }
@@ -98,7 +98,7 @@ const ListingEditer = ({
           <Input
             type="text"
             name="media"
-            id="media"
+            id={`media${id}`}
             value={
               Array.isArray(values.media)
                 ? values.media?.join(",")
@@ -111,7 +111,7 @@ const ListingEditer = ({
         </form>
       </dialog>
       <ToastContainer />
-      <button onClick={() => editRef.current?.showModal()}>
+      <button  aria-label="Edit listing" onClick={() => editRef.current?.showModal()}>
         <FaEdit />
       </button>
     </>

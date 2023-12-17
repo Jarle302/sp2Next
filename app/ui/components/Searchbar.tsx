@@ -7,7 +7,7 @@ import Link from "next/link";
 import { IoMdCloseCircle } from "react-icons/io";
 import { ListingProps } from "@/app/utils/types/types";
 
-const Searchbar = ({ Component }: { Component?: React.FC<ListingProps> }) => {
+const Searchbar = ({ Component,useCase }: { Component?: React.FC<ListingProps>,useCase:string }) => {
   const { state, dispatch } = useContext(ReducerContext);
   const [searchQuery, handleChange, reset, setSearchQuery] = useForm(
     {
@@ -29,17 +29,18 @@ const Searchbar = ({ Component }: { Component?: React.FC<ListingProps> }) => {
     <section className=" relative flex-wrap flex justify-between">
       <search className="basis-full m-auto">
         <form action="">
-          <div className="flex bg-white  text-gray-600 mx-2">
+          <div className="flex bg-white  text-gray-600 mx-2 relative">
+            <label htmlFor={`search${useCase}`} className="font-bold py-2 absolute bottom-[20px] ">Search</label>
             <input
               className="flex-basis-[100%] py-3 outline-none"
               onChange={handleChange}
               type="text"
-              name="search"
-              id="search"
-              placeholder="Search"
+              name={`search${useCase}`}
+              id={`search${useCase}`}
               value={searchQuery.search}
             />
             <button
+            aria-label="Reset search"
               className="text-[2rem]"
               onClick={(e) => {
                 e.preventDefault();

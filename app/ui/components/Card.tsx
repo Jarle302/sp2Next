@@ -86,9 +86,6 @@ const Card = ({
           </div>
         </div>
         <div className="w-full font-bold text-center p-[10px] flex gap-2">
-          <button className="w-2/4 border border-2 border-gray-600 block m-auto text-orange-100 bg-gray-600">
-            Bid now
-          </button>
           <Link
             className="w-2/4 border border-2 border-gray-600 block m-auto"
             href={`/listings/${id}`}>

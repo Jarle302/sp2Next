@@ -21,6 +21,7 @@ export default function DeleteButton({
   return (
     <>
     <button
+     aria-label="Delete listing"
       className={className}
       onClick={async () => {
         deleteListing(id);
