@@ -58,7 +58,7 @@ const Nav = () => {
             </>
           )}
           {navState.isSmallScreen && (
-           <li> <button
+           <li> <button aria-label="toggle mobile nav"
               onClick={() =>
                 setNavState((prev) => ({ ...prev, isVisible: !prev.isVisible }))
               }>
