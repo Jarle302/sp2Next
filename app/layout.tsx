@@ -39,7 +39,7 @@ export default async function RootLayout({
             {" "}
             <NavProvider>
               <Nav />
-              <div className="grid gridCustom h-[100%]">
+              <div className="lg:grid gridCustom h-[100%]">
                 <SideNav />
 
                 <div className="flex-grow h-[100vh] overflow-y-auto">
