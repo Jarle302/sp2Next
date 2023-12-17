@@ -6,7 +6,8 @@ import useForm from "@/app/utils/customHooks/useForm";
 import Input from "./Input";
 import { FaWindowClose } from "react-icons/fa";
 import changeAvatarFormEval from "@/app/utils/formValidation/changeAvatar";
-
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 const AvatarChanger = ({ buttonClasses }: { buttonClasses?: string }) => {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const { userAccount, setUserAccount } = useContext(UserAccount);
@@ -40,13 +41,14 @@ const AvatarChanger = ({ buttonClasses }: { buttonClasses?: string }) => {
             className="bg-red-200"
             onClick={async (e) => {
               e.preventDefault();
-              console.log("values.avatar", values.avatar);
               const response = await changeAvatar(
                 userAccount.name,
                 values.avatar
               );
-              setUserAccount({ ...userAccount, avatar: values.avatar });
-              console.log(response);
+              if(response.name){
+                toast.success(`Avatar changed successfully!`)
+                setUserAccount({ ...userAccount, avatar: values.avatar });
+              }
             }}>
             Change Avatar
           </button>
@@ -57,6 +59,7 @@ const AvatarChanger = ({ buttonClasses }: { buttonClasses?: string }) => {
         onClick={() => dialogRef.current?.showModal()}>
         Change Avatar
       </button>
+      <ToastContainer />
     </>
   );
 };

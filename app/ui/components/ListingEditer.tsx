@@ -8,16 +8,9 @@ import validateCreateListing from "@/app/utils/formValidation/createListing";
 import fetchFunction from "@/app/utils/fetchFunction";
 import { listingId } from "@/app/utils/api/endpoints";
 import { FaEdit } from "react-icons/fa";
-import { state } from "@/app/utils/types/types";
-
-type Listing = {
-  title: string;
-  description: string;
-  tags: string[] | string;
-  media: string[] | string;
-  id: string;
-};
-
+import { state,Listing } from "@/app/utils/types/types";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 type ListingEditerProps = Listing & {
@@ -33,7 +26,7 @@ const ListingEditer = ({
   setState,
 }: ListingEditerProps) => {
   const editRef = useRef<HTMLDialogElement>(null);
-  const [values, handleChange, reset, setValues] = useForm(
+  const [values, handleChange, reset, setValues,formErrors] = useForm(
     {
       title,
       description,
@@ -61,6 +54,7 @@ const ListingEditer = ({
         listing.id === id ? { ...listing, ...submitObject } : listing
       ),
     }));
+    toast.success(`Listing edited successfully!`)
     editRef.current?.close();
   }
 
@@ -116,6 +110,7 @@ const ListingEditer = ({
           <button type="submit">Save changes</button>
         </form>
       </dialog>
+      <ToastContainer />
       <button onClick={() => editRef.current?.showModal()}>
         <FaEdit />
       </button>
