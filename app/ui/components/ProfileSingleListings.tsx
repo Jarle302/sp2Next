@@ -30,7 +30,7 @@ const ProfileSingleListing = ({
   setState,
 }: listingProps) => {
   return (
-    <div className="flex p-[10px] justify-between">
+    <div className="flex p-[5px] justify-between">
       {isCurrentUser && (
         <EditDelete {...{ title, description, id, media, tags, setState }} />
       )}
@@ -42,8 +42,8 @@ const ProfileSingleListing = ({
         <p>{`Ends ${endsAt.split("T")[0]}`}</p>
       </div>
       <img
-        className="w-[215px] h-[215px] object-cover"
-        src={media[0]? media[0] : "/ListingPlaceholder.png"}
+        className="w-[200px] h-[200px] object-cover"
+        src={media[0] ? media[0] : "/ListingPlaceholder.png"}
         alt="listing image"
       />
     </div>
