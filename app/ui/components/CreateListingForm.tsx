@@ -94,7 +94,6 @@ const CreateListingForm = () => {
         <h1 className="text-6xl text-center mt-[74px] basis-full">Create Listing</h1>
 
         <form
-          action=""
           className="shadow-md flex flex-col justify-evenly p-[20px] min-w-[300px]">
           <Input
             handleChange={handleChange}
