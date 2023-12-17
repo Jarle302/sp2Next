@@ -28,7 +28,7 @@ const Searchbar = ({ Component,useCase }: { Component?: React.FC<ListingProps>,u
   return (
     <section className=" relative flex-wrap flex justify-between">
       <div className="basis-full m-auto">
-        <form action="">
+        <form >
           <div className="flex bg-white  text-gray-600 mx-2 relative">
             <label htmlFor={`search${useCase}`} className="font-bold py-2 absolute bottom-[20px] ">Search</label>
             <input

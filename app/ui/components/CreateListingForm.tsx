@@ -64,7 +64,6 @@ const CreateListingForm = () => {
     });
     input.value = "";
   
-  console.log(values);
   }
   return (
     <>
@@ -148,7 +147,6 @@ const CreateListingForm = () => {
             label="endsAt"
             id="endsAt"
             value={values.endsAt}
-            placeholder=""
             formErrors={formErrors.endsAt}
           />
           <div className="flex flex-col">
