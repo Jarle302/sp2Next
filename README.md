@@ -1,6 +1,7 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 # Collection Chest Website
+![image](https://github.com/Jarle302/portofolio2/blob/main/public/collectivechest.jpg)
 
 Welcome to the Collection Chest website! This project was created as my semester project with the goal of implementing a feature-rich platform for collecting and sharing items. Users can add, browse, and bid on items on this platform, and this README will guide you through the functionality and setup of the application.
 
